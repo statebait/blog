@@ -1,0 +1,9 @@
+body {
+  color: white;
+  background-color: #000;
+}
+
+blockquote {
+  color: rgba(255, 255, 255, 0.7) !important;
+  border-left: 0.32813rem solid white;
+}
