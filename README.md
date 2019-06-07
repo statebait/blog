@@ -11,6 +11,6 @@ yarn develop
 
 then open https://localhost:8000 in a browser.
 
-# License
+## License
 
 This project is licensed under the MIT License - Copyright (c) 2019 Mohamed Shadab

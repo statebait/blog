@@ -1,56 +1,46 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
+import Switch from "react-switch"
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
+  constructor(props) {
+    super(props)
+    this.state = {
+      toggle: false,
     }
+  }
+
+  handleChange = toggleTheme => {
+    toggleTheme(this.state.toggle ? "dark" : "light")
+    this.setState({ toggle: !this.state.toggle })
+  }
+
+  render() {
+    const { title, children } = this.props
+    let header = (
+      <h1
+        style={{
+          ...scale(0.8),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
+          marginRight: "30%",
+        }}
+      >
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+          to={`/`}
+        >
+          {title}
+        </Link>
+      </h1>
+    )
+
     return (
       <div
         style={{
@@ -60,7 +50,42 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header style={{ display: "flex" }}>
+          {header}
+          <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <Switch
+                onChange={() => this.handleChange(toggleTheme)}
+                checked={theme === "dark"}
+                offColor="#000"
+                onColor="#fff"
+                onHandleColor="#000"
+                checkedIcon={
+                  <img
+                    src={require("../assets/svg/sun-solid.svg")}
+                    style={{
+                      margin: 6,
+                      width: 17,
+                      height: "auto",
+                    }}
+                    alt="."
+                  />
+                }
+                uncheckedIcon={
+                  <img
+                    src={require("../assets/svg/moon-solid.svg")}
+                    style={{
+                      margin: 6,
+                      width: 17,
+                      height: "auto",
+                    }}
+                    alt="."
+                  />
+                }
+              />
+            )}
+          </ThemeToggler>
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()} Mohamed Shadab, Built with

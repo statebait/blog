@@ -1,9 +1,21 @@
 body {
-  color: white;
-  background-color: #000;
+  color: var(--textColor);
+  background-color: var(--bg);
+}
+
+body.light {
+  --textColor: black;
+  --bq: rgba(0, 0, 0, 0.7);
+  --bg: white;
+}
+
+body.dark {
+  --textColor: white;
+  --bq: rgba(255, 255, 255, 0.7);
+  --bg: black;
 }
 
 blockquote {
-  color: rgba(255, 255, 255, 0.7) !important;
-  border-left: 0.32813rem solid white;
+  color: var(--bq) !important;
+  border-left: 0.32813rem solid var(--textColor);
 }
