@@ -26,7 +26,7 @@ The objectives for my phase one were:
 
 Tools/Technologies used: [Create React App](https://facebook.github.io/create-react-app/), [ReactJS](https://reactjs.org/), [NodeJS](https://nodejs.org/en/), [ExpressJS](https://expressjs.com/)
 
-The project was to be developed with ReactJS for the frontend and NodeJS for the backend. My mentor had suggested some boilerplates to begin with but honestly, I am not a fan of boilerplate and love to go vanilla and then build upon that. So what did I do, well what anybody would do - used create react app for the React part and copied the code of some other Node (express) project I had done before. And there you go, easy right, well not really, things got complex over time as we needed to integrate python and docker into the project. The project structure completely changed from what it was, to begin with, but all things said beginning with a vanilla-like setup made the process to change easily as the project developed.
+The project was to be developed with ReactJS for the frontend and NodeJS for the backend. My mentor had suggested some boilerplates to begin with but honestly, I am not a fan of boilerplate and love to go vanilla and then build upon that. So what did I do, well what anybody would do - used create react app for the React part and copied the code of some other Node (express) project I had done before. And there you go, easy right, well not really, things got complex over time as we needed to integrate python and docker into the project.
 
 The current project structure is:
 
@@ -52,11 +52,11 @@ It uses yarn workspaces and docker. 😍
 
 Tools/Technologies used: [Python](https://www.python.org/), [Python API for libsbml](https://github.com/sbmlteam/python-libsbml), [python-shell](https://github.com/extrabacon/python-shell), [express-formidable](https://github.com/utatti/express-formidable)
 
-For this task, the idea was that the user would upload a SBML file and the application would return him all the information present in the SBML file. For this, we had to research the different SBML parser libraries available and in which language was their API. We finally decided to have to go with the python-libsbml as it was developed by the team which create SBML itself and was actively maintained, had a comprehensive API along with good docs.
+For this task, the idea was that the user would upload a SBML file and the application would return all the information present in the SBML file. For this, we had to research the different SBML parser libraries available and in which language was their API. We finally decided to have to go with the python-libsbml as it was developed by the team which create SBML itself and was actively maintained, had a comprehensive API along with good docs.
 
 Using the python parser entailed a python integration with NodeJS (as the parsing would happen in the backend) and I initially thought this would be troublesome but it turned out to be as easy as importing an npm package and calling its API, namely python-shell.
 
-The code was as simple as:
+The code for the above:
 
 ```jsx
 PythonShell.run("sbmlParser.py", options, function(err, data) {
@@ -70,17 +70,17 @@ PythonShell.run("sbmlParser.py", options, function(err, data) {
 })
 ```
 
-Well, the final thing of concern in this task was to learn how to handle file uploads in Node and well this wasn't as easy as it sounds. There a lot of libraries available out there with unintuitive API and bad docs. With that said I settled for express-formidable (formidable for express).
+Well, the final topic of concern in this task was to learn how to handle file uploads in NodeJS and well this wasn't as easy as it sounds. There a lot of libraries available out there with unintuitive API and bad docs. With that said I settled for express-formidable (formidable for express).
 
 ### [Create Canvas and Render Model using ccNetViz](https://github.com/HelikarLab/ode-app/issues/3)
 
 Tools/Technologies used: [ccNetViz](https://github.com/HelikarLab/ccNetViz), [reactstrap](https://reactstrap.github.io/)
 
-The objective of this task was to create an acceptable visualisation of the SBML model that was parsed by the backend so that the user can understand the model better. Now to understand how the model would be visualised we need to understand what a model constitutes. Each model has multiple reactions. Each reaction is reversible or not and has products and reactants. Each product/reactant is a metabolite. All of this information needed to be adequately be represented by a graph, namely a graph with nodes. It took some time but the Mentors figured out a way and well only the implementation was remaining.
+The objective of this task was to create an acceptable visualisation of the SBML model that was parsed by the backend so that the user can understand the model better. Now to understand how the model would be visualised we need to understand what constitutes a model. Each model has multiple reactions. Each reaction is reversible or irreversible and has products and reactants. Each product/reactant is a metabolite. All of this information needed to be adequately represented by a graph. It took some time but the Mentors figured out a way and well only the implementation was remaining.
 
-The toughest part of this task was to get ccNetViz work with React. Once I figured that (it was trial and error 😪), getting the logic of how to nodes and edges for the graph were created was also kind of a challenge, mostly because ccNetViz has an API caveat, you need to give references of the nodes when you are defining edges.
+The toughest part of this task was to get ccNetViz work with React. Once I figured that (it was trial and error 😪), figuring out the logic of how to create the nodes and edges for the graph was also kind of a challenge, mostly because ccNetViz has an API caveat, i.e. you need to give references of the nodes when you are defining edges.
 
-As for other detail, I developed a bare minimum interface (with reactstrap) for the app which displayed information of each reaction, metabolite and the model info.
+As for other details, I developed a bare minimum interface (with reactstrap) for the app which displayed information of each reaction, metabolite and the model info.
 
 ### [Decrease memory footprint of Docker Images](https://github.com/HelikarLab/ode-app/issues/5)
 
@@ -88,9 +88,9 @@ As for other detail, I developed a bare minimum interface (with reactstrap) for 
 
 Tools/Technologies used: [Docker](https://www.docker.com/), [Docker Python libSBML](https://hub.docker.com/r/statebait/python-libsbml), [Docker Official Alpine Image](https://hub.docker.com/_/alpine)
 
-As we used base docker images of all technologies we used the images were large - around 1gb each and having a 3 container system that is a lot of memory and therefore the need to reduce the memory footprint of the Docker Images came up.
+All the docker images we used were around 1gb each and having a 3 container system that is a lot of memory and therefore the need to reduce the memory footprint of the Docker Images came up.
 
-Now, if you have the question that, how does one do that? Yea my mind raced through the same question. Mentor, to the rescue; "Use an alpine image". 🙌
+Now, if you have the question that, how does one do that? Yeah, my mind raced through the same question. Mentor, to the rescue; "Use an alpine image". 🙌
 
 "A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
 
@@ -100,7 +100,7 @@ Alpine images are great. If you aren't using them you should. Learn't a lot, mad
 
 Tools/Technologies used: [Recharts](http://recharts.org/en-US/), [React-Grid-Layout](https://github.com/STRML/react-grid-layout)
 
-The task was to create 4 different panels which contain configuration required for the simulation. The difficult part of this task was actually figuring out a sustainable/scalable state and manipulating it as each panel kind of intercommunicated with each other in the effort to create a viable configuration. To use easy-peasy for global state management was a great choice and helped a lot in this task but more on that in ['Extras'](#Extras).
+For this task, I was to create 4 different panels which contain configuration required for the simulation. The difficult part of this task was actually figuring out a sustainable/scalable state and manipulating it as each panel intercommunicated with each other in the effort to create a viable configuration. To use easy-peasy for global state management was a great choice and helped a lot in this task but more on that in ['Extras'](#Extras).
 
 As for the panels, used react-grid-layout which makes it super easy to create draggable and resizeable layouts.
 
@@ -112,11 +112,11 @@ To achieve consistent behaviour across different Operating Systems and to simpli
 
 #### Database
 
-The database used was [PostgreSQL](https://www.postgresql.org/) and the ORM in NodeJS was [Sequelize](http://docs.sequelizejs.com/). The App contains 3 models - Model, Reactions and Metabolites. Honestly, I changed up the models a bunch of times until I was satisfied with the structure and with that said I am sure they ought to change a few times as the application grows. Other than that currently 2 API's integrate the Database with the application; 'save model' and 'load model' API.
+The database used was [PostgreSQL](https://www.postgresql.org/) and the ORM in NodeJS was [Sequelize](http://docs.sequelizejs.com/). The App contains 3 models - Model, Reactions and Metabolites. Honestly, I changed the models a bunch of times until I was satisfied with the structure and with that said I am sure they ought to change a few times as the application grows. Other than that currently 2 API's integrate the Database with the application; 'save model' and 'load model' API.
 
 #### easy-peasy
 
-Initially, I used [Redux](https://redux.js.org/) for the state management of react app. If you are accustomed to Redux then you would know the boilerplate it entails which started becoming an issue. Just then I came across this new library [easy-peasy](https://easy-peasy.now.sh/). A state management library built on top of Redux which takes away all the boilerplate of Redux and makes state management extremely easy(as the name suggests 😁). It features a hook based API which gave me the incentive to migrate the entire react app to use react hooks(and now all the code looks really clean).
+Initially, I used [Redux](https://redux.js.org/) for the state management of the react app. If you are accustomed to Redux then you would know the boilerplate it entails which started becoming an issue. Just then I came across this new library [easy-peasy](https://easy-peasy.now.sh/). A state management library built on top of Redux which takes away all the boilerplate of Redux and makes state management extremely easy(as the name suggests 😁). It features a hook based API which gave me the incentive to migrate the entire react app to use react hooks(and now all the code looks really clean).
 
 ### Final thoughts
 
