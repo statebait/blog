@@ -1,11 +1,87 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://shadxx7.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Fri, 07 Jun 2019 13:52:57 GMT</lastBuildDate><item><title><![CDATA[Web Development on Windows]]></title><description><![CDATA[In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has…]]></description><link>https://shadxx7.github.io/blog/web-development-on-windows/</link><guid isPermaLink="false">https://shadxx7.github.io/blog/web-development-on-windows/</guid><pubDate>Sun, 24 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has changed over the years as Windows has matured into what it is today.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://shadxx7.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jun 2019 18:27:16 GMT</lastBuildDate><item><title><![CDATA[GSoC 2019 Phase One]]></title><description><![CDATA[Project InfoProject: Web Pipeline For Kinetic (ODE-Based) ModelsDescription: Ordinary differential equations are widely used for modelling…]]></description><link>https://shadxx7.github.io/blog/gsoc-phase-one/</link><guid isPermaLink="false">https://shadxx7.github.io/blog/gsoc-phase-one/</guid><pubDate>Wed, 26 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#6481219057876992&quot;&gt;Project Info&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Web Pipeline For Kinetic (ODE-Based) Models&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; Ordinary differential equations are widely used for modelling biological networks and processes of kinetics. The idea of the project is to create a web application that allows a user to submit an SBML model and select methods of analysis and receive results. The different kind of analysis methods that will be available for use are Steady State Analysis, Parameter Fitting, Simulation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Computational Biology @ University of Nebraska-Lincoln&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mentors:&lt;/strong&gt; Achilles Rasquinha, Robert Moore&lt;/p&gt;
+&lt;p&gt;The objectives for my phase one were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a project boilerplate&lt;/li&gt;
+&lt;li&gt;Setup SBML parser API (SBML abbr. for Systems Biology Markup Language)&lt;/li&gt;
+&lt;li&gt;Create Canvas and Render Model using ccNetViz&lt;/li&gt;
+&lt;li&gt;Decrease memory footprint of Docker Images&lt;/li&gt;
+&lt;li&gt;Create a simulation tab with appropriate panels&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&quot;https://github.com/HelikarLab/ode-app/issues/1&quot;&gt;Create a project boilerplate&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://facebook.github.io/create-react-app/&quot;&gt;Create React App&lt;/a&gt;, &lt;a href=&quot;https://reactjs.org/&quot;&gt;ReactJS&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;NodeJS&lt;/a&gt;, &lt;a href=&quot;https://expressjs.com/&quot;&gt;ExpressJS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The project was to be developed with ReactJS for the frontend and NodeJS for the backend. My mentor had suggested some boilerplates to begin with but honestly, I am not a fan of boilerplate and love to go vanilla and then build upon that. So what did I do, well what anybody would do - used create react app for the React part and copied the code of some other Node (express) project I had done before. And there you go, easy right, well not really, things got complex over time as we needed to integrate python and docker into the project. The project structure completely changed from what it was, to begin with, but all things said beginning with a vanilla-like setup made the process to change easily as the project developed.&lt;/p&gt;
+&lt;p&gt;The current project structure is:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; |- client              -&amp;gt; Contains the code of the react client
+    |- src              -&amp;gt; Source files of the react client
+        |- components   -&amp;gt; React components
+        |- store        -&amp;gt; Redux store
+ |- server              -&amp;gt; Contains the code of the node server
+    |- routes           -&amp;gt; API routes
+    |- controllers      -&amp;gt; API controllers
+    |- models           -&amp;gt; Sequelize(SQL) models
+    |- config           -&amp;gt; Configuration files for the database
+    |- sbmlParser.py    -&amp;gt; Python script to parse a SBML file into a JSON object using libsbml
+ |- docker-compose.yml  -&amp;gt; Docker Compose files that runs the application using docker
+ |- package.json        -&amp;gt; The main package.json governing the yarn workspaces
+ |- README.md           -&amp;gt; The main documentation file. Also this file :)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It uses yarn workspaces and docker. 😍&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://github.com/HelikarLab/ode-app/issues/2&quot;&gt;Setup a SBML parser API&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt;, &lt;a href=&quot;https://github.com/sbmlteam/python-libsbml&quot;&gt;Python API for libsbml&lt;/a&gt;, &lt;a href=&quot;https://github.com/extrabacon/python-shell&quot;&gt;python-shell&lt;/a&gt;, &lt;a href=&quot;https://github.com/utatti/express-formidable&quot;&gt;express-formidable&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For this task, the idea was that the user would upload a SBML file and the application would return him all the information present in the SBML file. For this, we had to research the different SBML parser libraries available and in which language was their API. We finally decided to have to go with the python-libsbml as it was developed by the team which create SBML itself and was actively maintained, had a comprehensive API along with good docs.&lt;/p&gt;
+&lt;p&gt;Using the python parser entailed a python integration with NodeJS (as the parsing would happen in the backend) and I initially thought this would be troublesome but it turned out to be as easy as importing an npm package and calling its API, namely python-shell.&lt;/p&gt;
+&lt;p&gt;The code was as simple as:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;PythonShell&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sbmlParser.py&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; options&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;err&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Something went wrong.&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    fs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;unlinkSync&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;./uploads/&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; file&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Well, the final thing of concern in this task was to learn how to handle file uploads in Node and well this wasn’t as easy as it sounds. There a lot of libraries available out there with unintuitive API and bad docs. With that said I settled for express-formidable (formidable for express).&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://github.com/HelikarLab/ode-app/issues/3&quot;&gt;Create Canvas and Render Model using ccNetViz&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://github.com/HelikarLab/ccNetViz&quot;&gt;ccNetViz&lt;/a&gt;, &lt;a href=&quot;https://reactstrap.github.io/&quot;&gt;reactstrap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The objective of this task was to create an acceptable visualisation of the SBML model that was parsed by the backend so that the user can understand the model better. Now to understand how the model would be visualised we need to understand what a model constitutes. Each model has multiple reactions. Each reaction is reversible or not and has products and reactants. Each product/reactant is a metabolite. All of this information needed to be adequately be represented by a graph, namely a graph with nodes. It took some time but the Mentors figured out a way and well only the implementation was remaining.&lt;/p&gt;
+&lt;p&gt;The toughest part of this task was to get ccNetViz work with React. Once I figured that (it was trial and error 😪), getting the logic of how to nodes and edges for the graph were created was also kind of a challenge, mostly because ccNetViz has an API caveat, you need to give references of the nodes when you are defining edges.&lt;/p&gt;
+&lt;p&gt;As for other detail, I developed a bare minimum interface (with reactstrap) for the app which displayed information of each reaction, metabolite and the model info.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://github.com/HelikarLab/ode-app/issues/5&quot;&gt;Decrease memory footprint of Docker Images&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Proceed only if you know what docker is and how it works&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt;, &lt;a href=&quot;https://hub.docker.com/r/statebait/python-libsbml&quot;&gt;Docker Python libSBML&lt;/a&gt;, &lt;a href=&quot;https://hub.docker.com/_/alpine&quot;&gt;Docker Official Alpine Image&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As we used base docker images of all technologies we used the images were large - around 1gb each and having a 3 container system that is a lot of memory and therefore the need to reduce the memory footprint of the Docker Images came up.&lt;/p&gt;
+&lt;p&gt;Now, if you have the question that, how does one do that? Yea my mind raced through the same question. Mentor, to the rescue; “Use an alpine image”. 🙌&lt;/p&gt;
+&lt;p&gt;“A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!”&lt;/p&gt;
+&lt;p&gt;Alpine images are great. If you aren’t using them you should. Learn’t a lot, made my &lt;a href=&quot;https://github.com/shadxx7/docker-python-libsbml&quot;&gt;own base image&lt;/a&gt; for python-libsbml and got the memory footprint down a lot.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://github.com/HelikarLab/ode-app/issues/6&quot;&gt;Create a simulation tab with appropriate panels&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;http://recharts.org/en-US/&quot;&gt;Recharts&lt;/a&gt;, &lt;a href=&quot;https://github.com/STRML/react-grid-layout&quot;&gt;React-Grid-Layout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The task was to create 4 different panels which contain configuration required for the simulation. The difficult part of this task was actually figuring out a sustainable/scalable state and manipulating it as each panel kind of intercommunicated with each other in the effort to create a viable configuration. To use easy-peasy for global state management was a great choice and helped a lot in this task but more on that in &lt;a href=&quot;#Extras&quot;&gt;‘Extras’&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As for the panels, used react-grid-layout which makes it super easy to create draggable and resizeable layouts.&lt;/p&gt;
+&lt;h3&gt;Extras&lt;/h3&gt;
+&lt;h4&gt;Docker&lt;/h4&gt;
+&lt;p&gt;To achieve consistent behaviour across different Operating Systems and to simplify the deployment process, docker was integrated into the project. 3 different containers were used - Server, Client and the database. All of them are launched together using docker-compose.&lt;/p&gt;
+&lt;h4&gt;Database&lt;/h4&gt;
+&lt;p&gt;The database used was &lt;a href=&quot;https://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt; and the ORM in NodeJS was &lt;a href=&quot;http://docs.sequelizejs.com/&quot;&gt;Sequelize&lt;/a&gt;. The App contains 3 models - Model, Reactions and Metabolites. Honestly, I changed up the models a bunch of times until I was satisfied with the structure and with that said I am sure they ought to change a few times as the application grows. Other than that currently 2 API’s integrate the Database with the application; ‘save model’ and ‘load model’ API.&lt;/p&gt;
+&lt;h4&gt;easy-peasy&lt;/h4&gt;
+&lt;p&gt;Initially, I used &lt;a href=&quot;https://redux.js.org/&quot;&gt;Redux&lt;/a&gt; for the state management of react app. If you are accustomed to Redux then you would know the boilerplate it entails which started becoming an issue. Just then I came across this new library &lt;a href=&quot;https://easy-peasy.now.sh/&quot;&gt;easy-peasy&lt;/a&gt;. A state management library built on top of Redux which takes away all the boilerplate of Redux and makes state management extremely easy(as the name suggests 😁). It features a hook based API which gave me the incentive to migrate the entire react app to use react hooks(and now all the code looks really clean).&lt;/p&gt;
+&lt;h3&gt;Final thoughts&lt;/h3&gt;
+&lt;p&gt;Learn’t a ton of things in the first phase and can’t wait to learn a ton more in the upcoming tasks!&lt;/p&gt;
+&lt;p&gt;With that said I also started contributing to the ccNetViz library (with 5 PRs merged!) and I must say the entire HelikarLab team is amazing, super supportive, helpful and resourceful.&lt;/p&gt;
+&lt;p&gt;Finally, I would like to thank my mentors greatly for all their support and if one of you is reading, you must know all of this wouldn’t be possible without you 🤩.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Web Development on Windows]]></title><description><![CDATA[In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has…]]></description><link>https://shadxx7.github.io/blog/web-development-on-windows/</link><guid isPermaLink="false">https://shadxx7.github.io/blog/web-development-on-windows/</guid><pubDate>Sun, 24 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has changed over the years as Windows has matured into what it is today.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This article assumes you are using Windows 10, however since Windows offers a decent amount of
 backwards compatibility, you should be able to pull this off with an older version of Windows too.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Terminal&lt;/h2&gt;
 &lt;p&gt;Lets get started with the terminal. The terminal will be extensively used as you will be using a wholesome of different CLIs (Command Line Interfaces, like npm). Primarily you should be using PowerShell and bash (I’ll get to this) with a wrapper like &lt;a href=&quot;https://hyper.is/&quot;&gt;hyper&lt;/a&gt;. Hyper is electron-based terminal built on HTML/CSS/JS. It has loads of extensions to add utility and themes to lavish your experience.&lt;/p&gt;
-&lt;p&gt;&lt;a
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/23593/terminal.jpg&quot;
     style=&quot;display: block&quot;
@@ -13,14 +89,10 @@ backwards compatibility, you should be able to pull this off with an older versi
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 64.13469068128425%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAceEoBV//8QAFhABAQEAAAAAAAAAAAAAAAAAEBEB/9oACAEBAAEFApjX/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8Bp//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ASf/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEAAgMAAAAAAAAAAAAAAAABECEAEWH/2gAIAQEAAT8hoKxIdg5P/9oADAMBAAIAAwAAABAQD//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAEDAQE/EAhf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QDP/EABgQAQEBAQEAAAAAAAAAAAAAAAEAETEh/9oACAEBAAE/EAGejownHySwiZjO2y3/2Q==&apos;); background-size: cover; display: block;&quot;
-    &gt;&lt;/span&gt;
-    &lt;img
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.13469068128425%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAceEoBV//8QAFhABAQEAAAAAAAAAAAAAAAAAEBEB/9oACAEBAAEFApjX/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8Bp//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ASf/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEAAgMAAAAAAAAAAAAAAAABECEAEWH/2gAIAQEAAT8hoKxIdg5P/9oADAMBAAIAAwAAABAQD//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAEDAQE/EAhf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QDP/EABgQAQEBAQEAAAAAAAAAAAAAAAEAETEh/9oACAEBAAE/EAGejownHySwiZjO2y3/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;1&quot;
@@ -34,8 +106,8 @@ backwards compatibility, you should be able to pull this off with an older versi
 /blog/static/bcb530713df7a245c70588158e905ca5/23593/terminal.jpg 1277w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-  &lt;/span&gt;
-  &lt;/a&gt;&lt;/p&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;I’ve mentioned the use of bash. Yes, you can install bash on windows and no it’s not a gimmick or some half-baked thing, its the real deal. Meet the Windows Subsystem for Linux (This feature was added to one of the later versions of Windows 10). &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/wsl/install-win10&quot;&gt;Here&lt;/a&gt; is how to install it. You should use bash whenever PowerShell is giving you unheeded trouble. Remember that when you run bash, its a completely different OS running somewhere on your windows and therefore you need to make fresh installations of all your CLIs using the appropriate commands(depends on which Linux installation you choose).&lt;/p&gt;
 &lt;h2&gt;Handy Tools&lt;/h2&gt;
 &lt;p&gt;Moving on let’s install a command-line installer. This is quite handy for doing quick installs of different tools. The 2 most popular options on windows are &lt;a href=&quot;https://scoop.sh/&quot;&gt;Scoop&lt;/a&gt; and &lt;a href=&quot;https://chocolatey.org/&quot;&gt;Chocolatey&lt;/a&gt;. I personally prefer Scoop, because of its more minimal operation, but you couldn’t go wrong with either(installing both is also an option). These let you install things like Node, Python etc. in the blink of an eye.&lt;/p&gt;
@@ -46,7 +118,11 @@ backwards compatibility, you should be able to pull this off with an older versi
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; global &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; windows-build-tools&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Code Editor&lt;/h2&gt;
 &lt;p&gt;The Code Editor is one of the most important things in web development and as a matter of fact in any kind of development (yes, I have a habit of repeating phrases). Having a seamless experience during coding, debugging can help with all the frustration that comes along with it. Personally, I have used a lot of different code editors, some that come loaded with a plethora of features and some that just have the bare minimum. However, there was only one that stuck; VS Code (abbr. for Visual Studio Code). VS Code comes with a handful features out of the box which should be enough to get you started and as you proceed you can explore its vast extensions marketplace to enhance your experience. VS Code with a good set of extensions can easily replicate a modern full-fledged IDE and all that with exceptional performance. Currently, its the most popular code editor for a lot of different categories of developers and receives new updates and features every month.&lt;/p&gt;
-&lt;p&gt;&lt;a
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/ec025/vscode.png&quot;
     style=&quot;display: block&quot;
@@ -54,14 +130,10 @@ backwards compatibility, you should be able to pull this off with an older versi
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 51.51267375306623%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQoz1WSy27TQBiF8xBQRONbxnd7bI9vTaI0DUpSiopYgIC0XJaskEjaJLQosEJij5BYg0ARj8AGpIpH4H3m8DtRgC6Ofo9H/uacM641szPspC/Rys9W+rsunqFIH0PwIyR8hDQ+RkaKwxG9GyGhGYcPVzPhRzJPHqEQz2WtAlRK+ZR0ijyeoxRTdDo3MRj00O3uoigKWBYDMxvwfBeOY6PR0GGQdEOFrqtS17eRJcdrYOXozq13ePNqicX5EkkwQbu1jyxLwXkCzwtgMpOAFmzXh2m7dIAFZjkwDAOapktF3aZET2StFHPstV/j6+cL/PzxG18+XRBwjN7ebSRJRDACEMgyGUFceEEEn8fkNIDrEtjxaM+SDXJKFcjapr+nx+/xbfkLHz98R+S9QJ71IERMH/kEssEYg0HyE4EwJvEIQRjCJfeMWVLT6uDB/TWwit3Kz3G4/3blthQzpGIXeS4ocrwCVhEdx0EQReBhAB5xxEIg8H34vi8d11o73HRYKY9mBKsOmBOwi2arIJfpKnIF4zxEEscIghC2Q3FNk/aoW2ZKlTqM/nd4WXOIpEs9+QSqOrRhezFFzdcwmy6DWXQZBlRVg0qXomkKAR/8+202TtdzhiLrUH8GHJvBsQxY3IHNbQIpUPXrqNevkrag1LekUr8mFeUKuH/vMrCZrYFlOseNwwX6dxdoHsyxQ8qHJ8gHExTDU2R9moMxyuFE5v1x9SzbBycoW1P5B8O1UAtZtsUyAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;&lt;/span&gt;
-    &lt;img
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.51267375306623%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQoz1WSy27TQBiF8xBQRONbxnd7bI9vTaI0DUpSiopYgIC0XJaskEjaJLQosEJij5BYg0ARj8AGpIpH4H3m8DtRgC6Ofo9H/uacM641szPspC/Rys9W+rsunqFIH0PwIyR8hDQ+RkaKwxG9GyGhGYcPVzPhRzJPHqEQz2WtAlRK+ZR0ijyeoxRTdDo3MRj00O3uoigKWBYDMxvwfBeOY6PR0GGQdEOFrqtS17eRJcdrYOXozq13ePNqicX5EkkwQbu1jyxLwXkCzwtgMpOAFmzXh2m7dIAFZjkwDAOapktF3aZET2StFHPstV/j6+cL/PzxG18+XRBwjN7ebSRJRDACEMgyGUFceEEEn8fkNIDrEtjxaM+SDXJKFcjapr+nx+/xbfkLHz98R+S9QJ71IERMH/kEssEYg0HyE4EwJvEIQRjCJfeMWVLT6uDB/TWwit3Kz3G4/3blthQzpGIXeS4ocrwCVhEdx0EQReBhAB5xxEIg8H34vi8d11o73HRYKY9mBKsOmBOwi2arIJfpKnIF4zxEEscIghC2Q3FNk/aoW2ZKlTqM/nd4WXOIpEs9+QSqOrRhezFFzdcwmy6DWXQZBlRVg0qXomkKAR/8+202TtdzhiLrUH8GHJvBsQxY3IHNbQIpUPXrqNevkrag1LekUr8mFeUKuH/vMrCZrYFlOseNwwX6dxdoHsyxQ8qHJ8gHExTDU2R9moMxyuFE5v1x9SzbBycoW1P5B8O1UAtZtsUyAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;2&quot;
@@ -75,8 +147,8 @@ backwards compatibility, you should be able to pull this off with an older versi
 /blog/static/edd4e7376170d0a5215b9091fd24effa/ec025/vscode.png 1223w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-  &lt;/span&gt;
-  &lt;/a&gt;&lt;/p&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Enough VS Code, moving on we have other options like &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, &lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;Sublime&lt;/a&gt;, &lt;a href=&quot;http://brackets.io/&quot;&gt;Brackets&lt;/a&gt; and &lt;a href=&quot;https://www.jetbrains.com/webstorm/&quot;&gt;WebStorm&lt;/a&gt; etc. Atom is very similar to VS Code but the place it lacks mainly is performance, as you load new extensions in Atom, it slows down significantly. WebStorm is an industry level IDE with all the important features out of the box but it is not free (unless you are a student enrolled in a school).&lt;/p&gt;
 &lt;p&gt;Alternatively, you could also use a Cloud IDE which basically are code editors running on the browsers. They come with a lot of handy features. Some of them are &lt;a href=&quot;https://codesandbox.io/&quot;&gt;Code Sandbox&lt;/a&gt;, &lt;a href=&quot;https://www.gitpod.io/&quot;&gt;GitPod&lt;/a&gt; and &lt;a href=&quot;https://coder.com/&quot;&gt;Coder&lt;/a&gt; etc.&lt;/p&gt;
 &lt;h2&gt;API Tester&lt;/h2&gt;
@@ -87,7 +159,11 @@ backwards compatibility, you should be able to pull this off with an older versi
 &lt;p&gt;Developing the Web on Windows has never been as easy as it is today, so let go of the myth that only Mac’s and Linux PC’s can do it and start developing on Windows today. 😃&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mistakes I Made in My First React App]]></title><description><![CDATA[I decided to write this article for all the people starting out with new React projects, in hope that it helps them in some way.
 Why React…]]></description><link>https://shadxx7.github.io/blog/mistakes-i-made-in-my-first-react-app/</link><guid isPermaLink="false">https://shadxx7.github.io/blog/mistakes-i-made-in-my-first-react-app/</guid><pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I decided to write this article for all the people starting out with new React projects, in hope that it helps them in some way.
 Why React? Its pretty simple, at this point in my life I was just stepping into the cosmos of Web, and React was the most popular front-end framework.&lt;/p&gt;
-&lt;p&gt;&lt;a
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/fb329/react-cosmos.jpg&quot;
     style=&quot;display: block&quot;
@@ -95,14 +171,10 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHIpJoCF//EABcQAQADAAAAAAAAAAAAAAAAAAIAESD/2gAIAQEAAQUCiNZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAAMBAQAAAAAAAAAAAAAAAQARMSBB/9oACAEBAAE/ISvWoZKdjuVx/9oADAMBAAIAAwAAABDsz//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAEDAQE/EKf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQEVFx/9oACAEBAAE/ECmh2M+xr5EKQDhhox//2Q==&apos;); background-size: cover; display: block;&quot;
-    &gt;&lt;/span&gt;
-    &lt;img
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHIpJoCF//EABcQAQADAAAAAAAAAAAAAAAAAAIAESD/2gAIAQEAAQUCiNZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAAMBAQAAAAAAAAAAAAAAAQARMSBB/9oACAEBAAE/ISvWoZKdjuVx/9oADAMBAAIAAwAAABDsz//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAEDAQE/EKf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQEVFx/9oACAEBAAE/ECmh2M+xr5EKQDhhox//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;1&quot;
@@ -116,8 +188,8 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
 /blog/static/8af8e4b0886f02ced35176d00b1014d0/fb329/react-cosmos.jpg 1920w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-  &lt;/span&gt;
-  &lt;/a&gt;&lt;/p&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;The app I built is used for the Elections of the Student Body Government in my College and it took me approximately 2 months to complete it. Link to the GitHub repository: &lt;a href=&quot;https://github.com/shadxx7/elections-frontend&quot;&gt;https://github.com/shadxx7/elections-frontend&lt;/a&gt;. So let’s begin:&lt;/p&gt;
 &lt;h2&gt;State Management&lt;/h2&gt;
 &lt;p&gt;If you’ve learned React enough and for that matter any good JS front-end framework, you would know the importance of state management. Good state management is key to a scalable and flexible application.&lt;/p&gt;
@@ -135,7 +207,11 @@ get component heavy and additionally they look more cleaner in terms of code, he
 readability.&lt;/p&gt;
 &lt;h2&gt;Nitty-gritties&lt;/h2&gt;
 &lt;p&gt;Now with the smaller problems and mistakes;&lt;/p&gt;
-&lt;p&gt;&lt;a
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/a5d5c/react-hold.png&quot;
     style=&quot;display: block&quot;
@@ -143,14 +219,10 @@ readability.&lt;/p&gt;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 56.16438356164384%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQoz2NQ94mDIzWfeDX/JLXAFNXgNNWQdNXQDBACMoLTgIJqAYnqvvHI6hkQHN94tYAktaAUoGqV8CzliBzlyFzZsCyliGzV8CygIFAKqABZP0Kzml8CyE6Izqg85dgC+ag8vcQipeg8IFclAqw/MFnNLxFDsy/IwUDnQXSqxReJRORFNfX9//mtePIcsbBstdhCoBTI/UiWM8CsjQeaCrI2Ils5tlAtJlsrOuvsxUv///9fueegZFimSnSuclgmxHJ1vwRUzb4JIM2hGcqROarxRQohqSHNvWs///3648e1+w+Mo1Kl3UMVA5JUwzJBIYdHs0p8sURkXs3KLdt+/N966PCOPbud4tOlfGJVo/KACoCa0W1WB2oGGhwC9HO2ckyBfExB7awlM1ase/H69eTlq+X8YlXjClQickDODkgGKkYLbWCAJaoGpaqEZQJjCOhtyag84bCcgJou3eRSuZgCleg8oBRQATBc0QMMFlXJsKjKVY0tUI0vlorIVYzOV4nKVQmHR1UCtkQC1O+fCNafBrQEGOwqkTlqQG1ABiicwYnMHyWRAQAR0NZd93Pi+QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;&lt;/span&gt;
-    &lt;img
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.16438356164384%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQoz2NQ94mDIzWfeDX/JLXAFNXgNNWQdNXQDBACMoLTgIJqAYnqvvHI6hkQHN94tYAktaAUoGqV8CzliBzlyFzZsCyliGzV8CygIFAKqABZP0Kzml8CyE6Izqg85dgC+ag8vcQipeg8IFclAqw/MFnNLxFDsy/IwUDnQXSqxReJRORFNfX9//mtePIcsbBstdhCoBTI/UiWM8CsjQeaCrI2Ils5tlAtJlsrOuvsxUv///9fueegZFimSnSuclgmxHJ1vwRUzb4JIM2hGcqROarxRQohqSHNvWs///3648e1+w+Mo1Kl3UMVA5JUwzJBIYdHs0p8sURkXs3KLdt+/N966PCOPbud4tOlfGJVo/KACoCa0W1WB2oGGhwC9HO2ckyBfExB7awlM1ase/H69eTlq+X8YlXjClQickDODkgGKkYLbWCAJaoGpaqEZQJjCOhtyag84bCcgJou3eRSuZgCleg8oBRQATBc0QMMFlXJsKjKVY0tUI0vlorIVYzOV4nKVQmHR1UCtkQC1O+fCNafBrQEGOwqkTlqQG1ABiicwYnMHyWRAQAR0NZd93Pi+QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;2&quot;
@@ -164,8 +236,8 @@ readability.&lt;/p&gt;
 /blog/static/278bf2e7ba194be4c05914e2412c6a13/a5d5c/react-hold.png 1460w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-  &lt;/span&gt;
-  &lt;/a&gt;&lt;/p&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h3&gt;a. Trying to render empty functions&lt;/h3&gt;
 &lt;p&gt;This mistake wasted hours of my life. Basically, when you try to render a class function like this:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token function-variable function&quot;&gt;renderFields&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
