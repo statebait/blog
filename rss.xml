@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://shadxx7.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sat, 13 Jul 2019 11:38:46 GMT</lastBuildDate><item><title><![CDATA[GSoC 2019 Phase One]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://shadxx7.github.io/blog/gsoc-phase-one/</link><guid isPermaLink="false">https://shadxx7.github.io/blog/gsoc-phase-one/</guid><pubDate>Wed, 26 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#6481219057876992&quot;&gt;Project Info&lt;/a&gt;&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://shadxx7.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 28 Aug 2019 08:50:24 GMT</lastBuildDate><item><title><![CDATA[GSoC 2019 Phase One]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://shadxx7.github.io/blog/gsoc-phase-one/</link><guid isPermaLink="false">https://shadxx7.github.io/blog/gsoc-phase-one/</guid><pubDate>Wed, 26 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#6481219057876992&quot;&gt;Project Info&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Web Pipeline For Kinetic (ODE-Based) Models&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; Ordinary differential equations are widely used for modelling biological networks and processes of kinetics. The idea of the project is to create a web application that allows a user to submit an SBML model and select methods of analysis and receive results. The different kind of analysis methods that will be available for use are Steady State Analysis, Parameter Fitting, Simulation.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Computational Biology @ University of Nebraska-Lincoln&lt;/p&gt;
@@ -83,7 +83,7 @@ backwards compatibility, you should be able to pull this off with an older versi
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/bcb530713df7a245c70588158e905ca5/23593/terminal.jpg&quot;
+    href=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/23593/terminal.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -96,14 +96,15 @@ backwards compatibility, you should be able to pull this off with an older versi
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;1&quot;
         title=&quot;1&quot;
-        src=&quot;/static/bcb530713df7a245c70588158e905ca5/c739e/terminal.jpg&quot;
-        srcset=&quot;/static/bcb530713df7a245c70588158e905ca5/8ee9c/terminal.jpg 148w,
-/static/bcb530713df7a245c70588158e905ca5/ebbe7/terminal.jpg 295w,
-/static/bcb530713df7a245c70588158e905ca5/c739e/terminal.jpg 590w,
-/static/bcb530713df7a245c70588158e905ca5/5413e/terminal.jpg 885w,
-/static/bcb530713df7a245c70588158e905ca5/4efde/terminal.jpg 1180w,
-/static/bcb530713df7a245c70588158e905ca5/23593/terminal.jpg 1277w&quot;
+        src=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/c739e/terminal.jpg&quot;
+        srcset=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/8ee9c/terminal.jpg 148w,
+/blog/static/bcb530713df7a245c70588158e905ca5/ebbe7/terminal.jpg 295w,
+/blog/static/bcb530713df7a245c70588158e905ca5/c739e/terminal.jpg 590w,
+/blog/static/bcb530713df7a245c70588158e905ca5/5413e/terminal.jpg 885w,
+/blog/static/bcb530713df7a245c70588158e905ca5/4efde/terminal.jpg 1180w,
+/blog/static/bcb530713df7a245c70588158e905ca5/23593/terminal.jpg 1277w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -123,7 +124,7 @@ backwards compatibility, you should be able to pull this off with an older versi
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/edd4e7376170d0a5215b9091fd24effa/ec025/vscode.png&quot;
+    href=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/ec025/vscode.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -136,14 +137,15 @@ backwards compatibility, you should be able to pull this off with an older versi
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;2&quot;
         title=&quot;2&quot;
-        src=&quot;/static/edd4e7376170d0a5215b9091fd24effa/b9e4f/vscode.png&quot;
-        srcset=&quot;/static/edd4e7376170d0a5215b9091fd24effa/cf440/vscode.png 148w,
-/static/edd4e7376170d0a5215b9091fd24effa/d2d38/vscode.png 295w,
-/static/edd4e7376170d0a5215b9091fd24effa/b9e4f/vscode.png 590w,
-/static/edd4e7376170d0a5215b9091fd24effa/f9b6a/vscode.png 885w,
-/static/edd4e7376170d0a5215b9091fd24effa/2d849/vscode.png 1180w,
-/static/edd4e7376170d0a5215b9091fd24effa/ec025/vscode.png 1223w&quot;
+        src=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/b9e4f/vscode.png&quot;
+        srcset=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/cf440/vscode.png 148w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/d2d38/vscode.png 295w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/b9e4f/vscode.png 590w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/f9b6a/vscode.png 885w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/2d849/vscode.png 1180w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/ec025/vscode.png 1223w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -163,7 +165,7 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8af8e4b0886f02ced35176d00b1014d0/fb329/react-cosmos.jpg&quot;
+    href=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/fb329/react-cosmos.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -176,14 +178,15 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;1&quot;
         title=&quot;1&quot;
-        src=&quot;/static/8af8e4b0886f02ced35176d00b1014d0/c739e/react-cosmos.jpg&quot;
-        srcset=&quot;/static/8af8e4b0886f02ced35176d00b1014d0/8ee9c/react-cosmos.jpg 148w,
-/static/8af8e4b0886f02ced35176d00b1014d0/ebbe7/react-cosmos.jpg 295w,
-/static/8af8e4b0886f02ced35176d00b1014d0/c739e/react-cosmos.jpg 590w,
-/static/8af8e4b0886f02ced35176d00b1014d0/5413e/react-cosmos.jpg 885w,
-/static/8af8e4b0886f02ced35176d00b1014d0/4efde/react-cosmos.jpg 1180w,
-/static/8af8e4b0886f02ced35176d00b1014d0/fb329/react-cosmos.jpg 1920w&quot;
+        src=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/c739e/react-cosmos.jpg&quot;
+        srcset=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/8ee9c/react-cosmos.jpg 148w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/ebbe7/react-cosmos.jpg 295w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/c739e/react-cosmos.jpg 590w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/5413e/react-cosmos.jpg 885w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/4efde/react-cosmos.jpg 1180w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/fb329/react-cosmos.jpg 1920w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -210,7 +213,7 @@ readability.&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/278bf2e7ba194be4c05914e2412c6a13/a5d5c/react-hold.png&quot;
+    href=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/a5d5c/react-hold.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -223,14 +226,15 @@ readability.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;2&quot;
         title=&quot;2&quot;
-        src=&quot;/static/278bf2e7ba194be4c05914e2412c6a13/b9e4f/react-hold.png&quot;
-        srcset=&quot;/static/278bf2e7ba194be4c05914e2412c6a13/cf440/react-hold.png 148w,
-/static/278bf2e7ba194be4c05914e2412c6a13/d2d38/react-hold.png 295w,
-/static/278bf2e7ba194be4c05914e2412c6a13/b9e4f/react-hold.png 590w,
-/static/278bf2e7ba194be4c05914e2412c6a13/f9b6a/react-hold.png 885w,
-/static/278bf2e7ba194be4c05914e2412c6a13/2d849/react-hold.png 1180w,
-/static/278bf2e7ba194be4c05914e2412c6a13/a5d5c/react-hold.png 1460w&quot;
+        src=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/b9e4f/react-hold.png&quot;
+        srcset=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/cf440/react-hold.png 148w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/d2d38/react-hold.png 295w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/b9e4f/react-hold.png 590w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/f9b6a/react-hold.png 885w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/2d849/react-hold.png 1180w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/a5d5c/react-hold.png 1460w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
