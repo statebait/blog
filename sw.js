@@ -11,13 +11,14 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("workbox-v3.6.3/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "workbox-v3.6.3"});
+importScripts("workbox-v4.3.1/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "workbox-v4.3.1"});
 
 workbox.core.setCacheNameDetails({prefix: "gatsby-plugin-offline"});
 
-workbox.skipWaiting();
-workbox.clientsClaim();
+workbox.core.skipWaiting();
+
+workbox.core.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -26,43 +27,42 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-b3a00250ac5a490eeb46.js"
+    "url": "webpack-runtime-aeb213568ea8743cd47b.js"
   },
   {
     "url": "styles.da2728fc17f7cf1ab236.css"
   },
   {
-    "url": "styles-4ed77d8cb08374d56192.js"
+    "url": "styles-c9874be7ad73c21ec123.js"
   },
   {
-    "url": "commons-4f5246ce3dff7bb04f70.js"
+    "url": "commons-c9b68a8232576f8d930e.js"
   },
   {
-    "url": "app-70def89c0c3e47baf171.js"
+    "url": "app-d01fdeb0b0bb96ae6b5b.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-3c1e5c4158a129ecedcb.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a70cc00f4966e9082d42.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "46095e33a4dbf61bdafbce077e16a2d9"
+    "revision": "a91f74d78c846d38d077f0e83e5ab515"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "a21d45ed977055634ed5f273fafe8965"
+    "revision": "083eb467e834ed0ded921eaa4cdeca3f"
   },
   {
     "url": "manifest.webmanifest",
     "revision": "dec21a4e910b5586fd5146659f0f42ea"
   }
 ].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, workbox.strategies.cacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, workbox.strategies.networkFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, new workbox.strategies.NetworkFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
 
@@ -77,7 +77,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/blog/app-70def89c0c3e47baf171.js`))) {
+  if (!resources || !(await caches.match(`/blog/app-d01fdeb0b0bb96ae6b5b.js`))) {
     return await fetch(event.request)
   }
 
@@ -91,7 +91,8 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   }
 
   const offlineShell = `/blog/offline-plugin-app-shell-fallback/index.html`
-  return await caches.match(offlineShell)
+  const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
+  return await caches.match(offlineShellWithKey)
 })
 
 workbox.routing.registerRoute(navigationRoute)
