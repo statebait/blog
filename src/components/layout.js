@@ -55,6 +55,7 @@ class Layout extends React.Component {
           <ThemeToggler>
             {({ theme, toggleTheme }) => (
               <Switch
+                aria-label="dark/light mode toggle"
                 onChange={() => this.handleChange(toggleTheme)}
                 checked={theme === "dark"}
                 offColor="#000"
@@ -82,6 +83,7 @@ class Layout extends React.Component {
                     alt="."
                   />
                 }
+                aria-checked={theme === "dark"}
               />
             )}
           </ThemeToggler>
