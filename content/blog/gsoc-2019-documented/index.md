@@ -1,5 +1,5 @@
 ---
-title: GSoC 2019, Documented.
+title: GSoC 2019 Documented
 date: "2019-11-09"
 description: A detailed summary of my Google Summer of Code 2019 project. What I did, where I struggled and how I tackled it.
 ---
