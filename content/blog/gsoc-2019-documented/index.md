@@ -110,7 +110,7 @@ init: (A = 1)
 m = read_model(model_description)
 ```
 
-The only problem with this library was...well it didn't work out of the box. What I did was that I downloaded the source files, found the bug that was causing it not to work, fixed it, repackaged the source files into a wheel file and now I ship the custom fixed library in the app itself. If you need to learn how to package your wheel file to install using pip see [this](https://dzone.com/articles/executable-package-pip-install).
+The only problem with this library was...well it didn't work out of the box. What I did was that I downloaded the source files, found the bug that was causing it not to work, fixed it, repackaged the source files into a wheel file and now I ship the custom fixed library in the app itself. If you need to learn how to package your own wheel file to install using pip see [this](https://dzone.com/articles/executable-package-pip-install).
 
 ### Building the plot panel
 
@@ -148,7 +148,7 @@ Refactoring involved visiting all files and cleaning up unnecessary code, breaki
 
 Tools/Technologies used: [cypress](https://www.cypress.io/)
 
-For testing, we used cypress, a E2E testing framework. Cypress is hands down amazing 🤩. The kind of automation you can achieve with this framework is phenomenal. Its API relatively easy and the features it provides complements how one should test application. Further, it helps you write code which is easier to test and also helps you keep test cases in mind while coding. Tests are simple, for eg:
+For testing, we used cypress, a E2E testing framework. Cypress is hands down amazing 🤩. The kind of automation you can achieve with this framework is phenomenal. Its API is relatively easy and the features it provides complements the entire testing process. Further, it helps you write code which is easier to test and also helps you keep test cases in mind while coding. Tests are simple, for eg:
 
 ```jsx
 it("Reactions populated", () => {
