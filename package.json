@@ -38,16 +38,16 @@
     "gh-pages": "^2.0.1",
     "prettier": "^1.18.0"
   },
-  "homepage": "https://shadxx7.github.io/blog",
+  "homepage": "https://statebait.github.io/blog",
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shadxx7/blog.git"
+    "url": "git+https://github.com/statebait/blog.git"
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",

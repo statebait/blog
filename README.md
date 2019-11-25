@@ -4,10 +4,17 @@ Built using [GatsbyJS](https://www.gatsbyjs.org/). Forked from the [gatsby-start
 
 To run locally, first clone the repo and then inside of the repo run the following commands:
 
-```bash
-yarn
-yarn develop
-```
+- To install dependencies:
+
+  ```bash
+  yarn
+  ```
+
+- To run the website:
+
+  ```bash
+  yarn dev
+  ```
 
 then open https://localhost:8000 in a browser.
 
