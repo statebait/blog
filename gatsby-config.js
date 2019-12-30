@@ -3,8 +3,8 @@ module.exports = {
   siteMetadata: {
     title: `Mohamed Shadab`,
     author: `Mohamed Shadab`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://shadxx7.github.io/blog`,
+    description: `Personal blog for Mohamed Shadab aka statebait`,
+    siteUrl: `https://statebait.github.io/blog`,
     social: {
       twitter: `statebait`,
     },
@@ -58,11 +58,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Statebait Blog`,
+        short_name: `statebait`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#8a75f5`,
         display: `minimal-ui`,
         icon: `content/assets/favicon.png`,
       },
