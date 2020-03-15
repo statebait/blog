@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[Personal blog for Mohamed Shadab aka statebait]]></description><link>https://statebait.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Jan 2020 17:49:55 GMT</lastBuildDate><item><title><![CDATA[GSoC 2019 Documented]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://statebait.github.io/blog/gsoc-2019-documented/</link><guid isPermaLink="false">https://statebait.github.io/blog/gsoc-2019-documented/</guid><pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#6481219057876992&quot;&gt;Project Info&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[Personal blog for Mohamed Shadab aka statebait]]></description><link>https://statebait.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Mar 2020 18:51:14 GMT</lastBuildDate><item><title><![CDATA[GSoC 2019 Documented]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://statebait.github.io/blog/gsoc-2019-documented/</link><guid isPermaLink="false">https://statebait.github.io/blog/gsoc-2019-documented/</guid><pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#6481219057876992&quot;&gt;Project Info&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Web Pipeline For Kinetic (ODE-Based) Models&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; Ordinary differential equations are widely used for modelling biological networks and processes of kinetics. The idea of the project is to create a web application that allows a user to submit an SBML model and select methods of analysis and receive results. The different kind of analysis methods that will be available for use are Steady State Analysis, Parameter Fitting, Simulation.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Computational Biology @ University of Nebraska-Lincoln&lt;/p&gt;
@@ -115,26 +115,26 @@ backwards compatibility, you should be able to pull this off with an older versi
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/4d27b/terminal.jpg&quot;
+    href=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/84f71/terminal.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 64.13469068128425%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAceEoBV//8QAFhABAQEAAAAAAAAAAAAAAAAAEBEB/9oACAEBAAEFApjX/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8Bp//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ASf/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEAAgMAAAAAAAAAAAAAAAABECEAEWH/2gAIAQEAAT8hoKxIdg5P/9oADAMBAAIAAwAAABAQD//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAEDAQE/EAhf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QDP/EABgQAQEBAQEAAAAAAAAAAAAAAAEAETEh/9oACAEBAAE/EAGejownHySwiZjO2y3/2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 64.1891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAceEoBV//8QAFhABAQEAAAAAAAAAAAAAAAAAEBEB/9oACAEBAAEFApjX/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8Bp//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ASf/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAEAAgMAAAAAAAAAAAAAAAABECEAEWH/2gAIAQEAAT8hoKxIdg5P/9oADAMBAAIAAwAAABAQD//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAEDAQE/EAhf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QDP/EABgQAQEBAQEAAAAAAAAAAAAAAAEAETEh/9oACAEBAAE/EAGejownHySwiZjO2y3/2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;1&quot;
         title=&quot;1&quot;
-        src=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/88218/terminal.jpg&quot;
-        srcset=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/7237a/terminal.jpg 148w,
-/blog/static/bcb530713df7a245c70588158e905ca5/0cfdf/terminal.jpg 295w,
-/blog/static/bcb530713df7a245c70588158e905ca5/88218/terminal.jpg 590w,
-/blog/static/bcb530713df7a245c70588158e905ca5/77d57/terminal.jpg 885w,
-/blog/static/bcb530713df7a245c70588158e905ca5/5a917/terminal.jpg 1180w,
-/blog/static/bcb530713df7a245c70588158e905ca5/4d27b/terminal.jpg 1277w&quot;
+        src=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/1c72d/terminal.jpg&quot;
+        srcset=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/a80bd/terminal.jpg 148w,
+/blog/static/bcb530713df7a245c70588158e905ca5/1c91a/terminal.jpg 295w,
+/blog/static/bcb530713df7a245c70588158e905ca5/1c72d/terminal.jpg 590w,
+/blog/static/bcb530713df7a245c70588158e905ca5/a8a14/terminal.jpg 885w,
+/blog/static/bcb530713df7a245c70588158e905ca5/fbd2c/terminal.jpg 1180w,
+/blog/static/bcb530713df7a245c70588158e905ca5/84f71/terminal.jpg 1277w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -157,26 +157,26 @@ backwards compatibility, you should be able to pull this off with an older versi
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/be3da/vscode.png&quot;
+    href=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/fe8a7/vscode.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 51.51267375306623%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQoz1WSy27TQBiF8xBQRONbxnd7bI9vTaI0DUpSiopYgIC0XJaskEjaJLQosEJij5BYg0ARj8AGpIpH4H3m8DtRgC6Ofo9H/uacM641szPspC/Rys9W+rsunqFIH0PwIyR8hDQ+RkaKwxG9GyGhGYcPVzPhRzJPHqEQz2WtAlRK+ZR0ijyeoxRTdDo3MRj00O3uoigKWBYDMxvwfBeOY6PR0GGQdEOFrqtS17eRJcdrYOXozq13ePNqicX5EkkwQbu1jyxLwXkCzwtgMpOAFmzXh2m7dIAFZjkwDAOapktF3aZET2StFHPstV/j6+cL/PzxG18+XRBwjN7ebSRJRDACEMgyGUFceEEEn8fkNIDrEtjxaM+SDXJKFcjapr+nx+/xbfkLHz98R+S9QJ71IERMH/kEssEYg0HyE4EwJvEIQRjCJfeMWVLT6uDB/TWwit3Kz3G4/3blthQzpGIXeS4ocrwCVhEdx0EQReBhAB5xxEIg8H34vi8d11o73HRYKY9mBKsOmBOwi2arIJfpKnIF4zxEEscIghC2Q3FNk/aoW2ZKlTqM/nd4WXOIpEs9+QSqOrRhezFFzdcwmy6DWXQZBlRVg0qXomkKAR/8+202TtdzhiLrUH8GHJvBsQxY3IHNbQIpUPXrqNevkrag1LekUr8mFeUKuH/vMrCZrYFlOseNwwX6dxdoHsyxQ8qHJ8gHExTDU2R9moMxyuFE5v1x9SzbBycoW1P5B8O1UAtZtsUyAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 51.35135135135135%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQoz1WSy27TQBiF8xBQRONbxnd7bI9vTaI0DUpSiopYgIC0XJaskEjaJLQosEJij5BYg0ARj8AGpIpH4H3m8DtRgC6Ofo9H/uacM641szPspC/Rys9W+rsunqFIH0PwIyR8hDQ+RkaKwxG9GyGhGYcPVzPhRzJPHqEQz2WtAlRK+ZR0ijyeoxRTdDo3MRj00O3uoigKWBYDMxvwfBeOY6PR0GGQdEOFrqtS17eRJcdrYOXozq13ePNqicX5EkkwQbu1jyxLwXkCzwtgMpOAFmzXh2m7dIAFZjkwDAOapktF3aZET2StFHPstV/j6+cL/PzxG18+XRBwjN7ebSRJRDACEMgyGUFceEEEn8fkNIDrEtjxaM+SDXJKFcjapr+nx+/xbfkLHz98R+S9QJ71IERMH/kEssEYg0HyE4EwJvEIQRjCJfeMWVLT6uDB/TWwit3Kz3G4/3blthQzpGIXeS4ocrwCVhEdx0EQReBhAB5xxEIg8H34vi8d11o73HRYKY9mBKsOmBOwi2arIJfpKnIF4zxEEscIghC2Q3FNk/aoW2ZKlTqM/nd4WXOIpEs9+QSqOrRhezFFzdcwmy6DWXQZBlRVg0qXomkKAR/8+202TtdzhiLrUH8GHJvBsQxY3IHNbQIpUPXrqNevkrag1LekUr8mFeUKuH/vMrCZrYFlOseNwwX6dxdoHsyxQ8qHJ8gHExTDU2R9moMxyuFE5v1x9SzbBycoW1P5B8O1UAtZtsUyAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;2&quot;
         title=&quot;2&quot;
-        src=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/799d3/vscode.png&quot;
-        srcset=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/00d96/vscode.png 148w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/0b23c/vscode.png 295w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/799d3/vscode.png 590w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/2a3d6/vscode.png 885w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/ae92f/vscode.png 1180w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/be3da/vscode.png 1223w&quot;
+        src=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/fcda8/vscode.png&quot;
+        srcset=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/12f09/vscode.png 148w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/e4a3f/vscode.png 295w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/fcda8/vscode.png 590w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/efc66/vscode.png 885w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/c83ae/vscode.png 1180w,
+/blog/static/edd4e7376170d0a5215b9091fd24effa/fe8a7/vscode.png 1223w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -199,26 +199,26 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/b89a9/react-cosmos.jpg&quot;
+    href=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/0f98f/react-cosmos.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHIpJoCF//EABcQAQADAAAAAAAAAAAAAAAAAAIAESD/2gAIAQEAAQUCiNZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAAMBAQAAAAAAAAAAAAAAAQARMSBB/9oACAEBAAE/ISvWoZKdjuVx/9oADAMBAAIAAwAAABDsz//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAEDAQE/EKf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQEVFx/9oACAEBAAE/ECmh2M+xr5EKQDhhox//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 56.08108108108109%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHIpJoCF//EABcQAQADAAAAAAAAAAAAAAAAAAIAESD/2gAIAQEAAQUCiNZ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAAMBAQAAAAAAAAAAAAAAAQARMSBB/9oACAEBAAE/ISvWoZKdjuVx/9oADAMBAAIAAwAAABDsz//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAEDAQE/EKf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQEVFx/9oACAEBAAE/ECmh2M+xr5EKQDhhox//2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;1&quot;
         title=&quot;1&quot;
-        src=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/88218/react-cosmos.jpg&quot;
-        srcset=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/7237a/react-cosmos.jpg 148w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/0cfdf/react-cosmos.jpg 295w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/88218/react-cosmos.jpg 590w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/77d57/react-cosmos.jpg 885w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/5a917/react-cosmos.jpg 1180w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/b89a9/react-cosmos.jpg 1920w&quot;
+        src=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/1c72d/react-cosmos.jpg&quot;
+        srcset=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/a80bd/react-cosmos.jpg 148w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/1c91a/react-cosmos.jpg 295w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/1c72d/react-cosmos.jpg 590w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/a8a14/react-cosmos.jpg 885w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/fbd2c/react-cosmos.jpg 1180w,
+/blog/static/8af8e4b0886f02ced35176d00b1014d0/0f98f/react-cosmos.jpg 1920w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -248,26 +248,26 @@ readability.&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/47d85/react-hold.png&quot;
+    href=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/95e59/react-hold.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.16438356164384%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQoz2NQ94mDIzWfeDX/JLXAFNXgNNWQdNXQDBACMoLTgIJqAYnqvvHI6hkQHN94tYAktaAUoGqV8CzliBzlyFzZsCyliGzV8CygIFAKqABZP0Kzml8CyE6Izqg85dgC+ag8vcQipeg8IFclAqw/MFnNLxFDsy/IwUDnQXSqxReJRORFNfX9//mtePIcsbBstdhCoBTI/UiWM8CsjQeaCrI2Ils5tlAtJlsrOuvsxUv///9fueegZFimSnSuclgmxHJ1vwRUzb4JIM2hGcqROarxRQohqSHNvWs///3648e1+w+Mo1Kl3UMVA5JUwzJBIYdHs0p8sURkXs3KLdt+/N966PCOPbud4tOlfGJVo/KACoCa0W1WB2oGGhwC9HO2ckyBfExB7awlM1ase/H69eTlq+X8YlXjClQickDODkgGKkYLbWCAJaoGpaqEZQJjCOhtyag84bCcgJou3eRSuZgCleg8oBRQATBc0QMMFlXJsKjKVY0tUI0vlorIVYzOV4nKVQmHR1UCtkQC1O+fCNafBrQEGOwqkTlqQG1ABiicwYnMHyWRAQAR0NZd93Pi+QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 56.08108108108109%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQoz2NQ94mDIzWfeDX/JLXAFNXgNNWQdNXQDBACMoLTgIJqAYnqvvHI6hkQHN94tYAktaAUoGqV8CzliBzlyFzZsCyliGzV8CygIFAKqABZP0Kzml8CyE6Izqg85dgC+ag8vcQipeg8IFclAqw/MFnNLxFDsy/IwUDnQXSqxReJRORFNfX9//mtePIcsbBstdhCoBTI/UiWM8CsjQeaCrI2Ils5tlAtJlsrOuvsxUv///9fueegZFimSnSuclgmxHJ1vwRUzb4JIM2hGcqROarxRQohqSHNvWs///3648e1+w+Mo1Kl3UMVA5JUwzJBIYdHs0p8sURkXs3KLdt+/N966PCOPbud4tOlfGJVo/KACoCa0W1WB2oGGhwC9HO2ckyBfExB7awlM1ase/H69eTlq+X8YlXjClQickDODkgGKkYLbWCAJaoGpaqEZQJjCOhtyag84bCcgJou3eRSuZgCleg8oBRQATBc0QMMFlXJsKjKVY0tUI0vlorIVYzOV4nKVQmHR1UCtkQC1O+fCNafBrQEGOwqkTlqQG1ABiicwYnMHyWRAQAR0NZd93Pi+QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;2&quot;
         title=&quot;2&quot;
-        src=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/799d3/react-hold.png&quot;
-        srcset=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/00d96/react-hold.png 148w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/0b23c/react-hold.png 295w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/799d3/react-hold.png 590w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/2a3d6/react-hold.png 885w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/ae92f/react-hold.png 1180w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/47d85/react-hold.png 1460w&quot;
+        src=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/fcda8/react-hold.png&quot;
+        srcset=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/12f09/react-hold.png 148w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/e4a3f/react-hold.png 295w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/fcda8/react-hold.png 590w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/efc66/react-hold.png 885w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/c83ae/react-hold.png 1180w,
+/blog/static/278bf2e7ba194be4c05914e2412c6a13/95e59/react-hold.png 1460w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
