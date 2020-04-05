@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "prettier": "^1.18.0"
+    "prettier": "^2.0.2"
   },
   "homepage": "https://statebait.github.io/blog",
   "license": "MIT",
