@@ -4,7 +4,7 @@ date: "2019-11-09"
 description: A detailed summary of my Google Summer of Code 2019 project. What I did, where I struggled and how I tackled it.
 ---
 
-## [Project Info](https://summerofcode.withgoogle.com/projects/#6481219057876992)
+## [Project Info](https://summerofcode.withgoogle.com/archive/2019/projects/4861160250146816/)
 
 **Project:** Web Pipeline For Kinetic (ODE-Based) Models
 
@@ -41,7 +41,7 @@ Using the python parser entailed a python integration with NodeJS (as the parsin
 The code for the above:
 
 ```jsx
-PythonShell.run("sbmlParser.py", options, function(err, data) {
+PythonShell.run("sbmlParser.py", options, function (err, data) {
   if (err) {
     console.error(err)
     res.status(500).send("Something went wrong.")
@@ -152,9 +152,7 @@ For testing, we used cypress, a E2E testing framework. Cypress is hands down ama
 
 ```jsx
 it("Reactions populated", () => {
-  cy.get('[data-test="reactions-table"]')
-    .find("tbody")
-    .find("tr")
+  cy.get('[data-test="reactions-table"]').find("tbody").find("tr")
 })
 ```
 
