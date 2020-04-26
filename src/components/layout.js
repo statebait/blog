@@ -12,7 +12,7 @@ class Layout extends React.Component {
     }
   }
 
-  handleChange = toggleTheme => {
+  handleChange = (toggleTheme) => {
     toggleTheme(this.state.toggle ? "dark" : "light")
     this.setState({ toggle: !this.state.toggle })
   }
@@ -90,7 +90,27 @@ class Layout extends React.Component {
         </header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()} Mohamed Shadab, Built with
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, max-content)",
+              gridGap: 10,
+              color: "#8a75f5",
+            }}
+          >
+            <a
+              href="https://www.github.com/statebait"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            .
+            <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+              RSS
+            </a>
+          </div>
+          <br />© {new Date().getFullYear()} Mohamed Shadab, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
