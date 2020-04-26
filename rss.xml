@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[Personal blog for Mohamed Shadab aka statebait]]></description><link>https://statebait.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Apr 2020 12:28:09 GMT</lastBuildDate><item><title><![CDATA[GSoC 2019 Documented]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://statebait.github.io/blog/gsoc-2019-documented/</link><guid isPermaLink="false">https://statebait.github.io/blog/gsoc-2019-documented/</guid><pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/archive/2019/projects/4861160250146816/&quot;&gt;Project Info&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[Personal blog for Mohamed Shadab aka statebait]]></description><link>https://statebait.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Apr 2020 12:39:47 GMT</lastBuildDate><item><title><![CDATA[Yoctosehns Software Architecture]]></title><description><![CDATA[The early platform of Yoctosehns can be divided into 4 services; 2 independent micro frontends one used for statistical calculation and the…]]></description><link>https://statebait.github.io/blog/yoctosehns-software-architecture/</link><guid isPermaLink="false">https://statebait.github.io/blog/yoctosehns-software-architecture/</guid><pubDate>Sun, 26 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The early platform of Yoctosehns can be divided into 4 services; 2 independent micro frontends one used for statistical calculation and the other for general monitoring built with ReactJS and AngularJS respectively. The other 2 services were a Python Flask based REST API which crudely inserted data on to the final service that is the MySQL Database.&lt;/p&gt;
+&lt;p&gt;The Flask service had multiple APIs (mostly CRUD) baked into it for fetching data from the database and one rather important API which handled all the HTTP requests from the Hardware nodes to make entries into the database.&lt;/p&gt;
+&lt;p&gt;Redesigning this was important as having 2 different frontends which easily could have been the same module was difficult to manage. Other than that, since the data was used to perform statistics and advanced monitoring, there was a lot of varied data fetching involved. Creating separate APIs for each of these was difficult.&lt;/p&gt;
+&lt;p&gt;The new software architecture of Yoctosehns utilizes Microservices architecture. In this architecture, each process is isolated into a different service that that is independent of each other. They communicate with each other through the help of the REST API (Application Programming Interface) and GraphQL API which both leverage the HTTP protocol under the hood.&lt;/p&gt;
+&lt;p&gt;An architecture diagram to explain it better:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/d98d44bab555c8ba637076a535e02702/c2b0b/architecture-diagram.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.05405405405406%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAABh0lEQVQoz33T147CUAwE0Pz//yGB6HWBEHovYQ/xKgJW4IfIudczHo+T5P4aeZ6vVqv5fJ6m6X6/P5/Pl8vl/iGSt/fb7bbdbjebzWAwWCwWs9lst9s5PB6Pp9NJ8g18vV618oSfTqdZlnki+imCHNK+gdFTq7RWq+lsisPhgCItwkR4nbyAg9JFv99vt9vNZrPb7UpiZnQsgATDa6I/sGtzuhgOh5VKZTQaecVFRfQMXjOrnEwmvV4PqasHWOlyuXRar9fhNdckqvlESKfTCc2uyGFBo9FQk5SjYoqeFO6KwBhExh6PxzEaRjkjWZOUG1IK7Ol6WYQKMAm1Ep2VIY1d6peci5B5Aq/X63KZTp69JJh+c9mCShMlsXpgxIZRUWJiH7Fz1UwOIWRLAB+d8yK4X61WOUnkrYiYHGN4ETtDZPnwrhIvWREEBzdKpXxqtVpWolUMEgLjE4wGj85hgBmMhNLOJDCQlo/l07+R/D8K5zHyxhdC5Ddw/hQBjo8JBRfhSwvf4hcSMZcM3Xwo3AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Architecture Diagram&quot;
+        title=&quot;Architecture Diagram&quot;
+        src=&quot;/blog/static/d98d44bab555c8ba637076a535e02702/fcda8/architecture-diagram.png&quot;
+        srcset=&quot;/blog/static/d98d44bab555c8ba637076a535e02702/12f09/architecture-diagram.png 148w,
+/blog/static/d98d44bab555c8ba637076a535e02702/e4a3f/architecture-diagram.png 295w,
+/blog/static/d98d44bab555c8ba637076a535e02702/fcda8/architecture-diagram.png 590w,
+/blog/static/d98d44bab555c8ba637076a535e02702/efc66/architecture-diagram.png 885w,
+/blog/static/d98d44bab555c8ba637076a535e02702/c83ae/architecture-diagram.png 1180w,
+/blog/static/d98d44bab555c8ba637076a535e02702/c2b0b/architecture-diagram.png 1895w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Python Flask Server&lt;/h2&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://flask.palletsprojects.com/en/1.1.x/&quot;&gt;Python Flask&lt;/a&gt;, &lt;a href=&quot;https://flask-cors.readthedocs.io/en/latest/&quot;&gt;Flask CORS&lt;/a&gt;, &lt;a href=&quot;https://flask-sqlalchemy.palletsprojects.com/en/2.x/&quot;&gt;Flask SQLAlchemy&lt;/a&gt;, &lt;a href=&quot;https://arrow.readthedocs.io/en/latest/&quot;&gt;Arrow&lt;/a&gt;, &lt;a href=&quot;https://flask-jwt-extended.readthedocs.io/en/stable/&quot;&gt;Flask JWT Extended&lt;/a&gt;, &lt;a href=&quot;https://gunicorn.org/&quot;&gt;Gunicorn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is the heart/core of the entire system. It handles authentication, requests from the hardware components and inserting the data coming from the hardware nodes into the database. The Arrow library for python is used to manage timestamps and dates in the computations and data storage in the database. Gunicorn is used as the production server for the Flask App and its powerful logging system is leveraged to monitor the different requests coming in from the Hardware nodes.&lt;/p&gt;
+&lt;p&gt;Its sub-components are:&lt;/p&gt;
+&lt;h4&gt;REST API&lt;/h4&gt;
+&lt;p&gt;A very small set of APIs used to handle incoming requests from the Hardware Nodes. REST which stands for Representational state transfer is a software architectural style that defines a set of constraints to be used for creating Web services. Web services that conform to the REST architectural style, called RESTful Web services, provide interoperability between computer systems on the Internet. We use the REST API which is built on top of the HTTP protocol to communicate with the Hardware nodes.&lt;/p&gt;
+&lt;h4&gt;Authentication system&lt;/h4&gt;
+&lt;p&gt;The Authentication system facilitates all the authorization processes throughout the platform. It is
+a simple JWT (JSON Web Token) based authentication system which handles auth based requests from the frontend and has a shared secret with the Hasura GraphQL Engine. It functions with the use of an access token which is generated using the HS256 encryption algorithm with a secret only known to the backend. The communication happens through a single endpoint based on the REST API explained below leveraging the HTTP protocol.&lt;/p&gt;
+&lt;h4&gt;SQLAlchemy ORM&lt;/h4&gt;
+&lt;p&gt;SQLAlchemy ORM (Object-Relationship Mapping) is used to have a well-defined schema using different models corresponding to the tables in the Database. This ORM is also used to handle inserting the monitoring data from the Hardware nodes into the database.&lt;/p&gt;
+&lt;h2&gt;Hasura GraphQL Engine&lt;/h2&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://hasura.io/&quot;&gt;Hasura&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Hasura GraphQL Engine coupled with the database form the brain of the system. Hasura is an open-source engine that connects to your databases &amp;#x26; microservices and auto-generates a production-ready GraphQL backend. It generates a thorough GraphQL API for all the different tables present in the PostgreSQL database. We can query, mutate, or subscribe to any part of the database using this and it makes fetching varying data a breeze on the frontend. GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools. It also uses the HTTP protocol for communication under the hood.&lt;/p&gt;
+&lt;h2&gt;PostgreSQL Database&lt;/h2&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Contains all of the data we store from the Hardware Nodes and also computed data of the different statistics we perform on that data in a multitude of different tables. It is connected to the GraphQL Engine using the HTTP and to the Flask based server using the SQLAlchemy ORM.&lt;/p&gt;
+&lt;h2&gt;Frontend&lt;/h2&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://nextjs.org/&quot;&gt;NextJS&lt;/a&gt;, &lt;a href=&quot;https://www.apollographql.com/&quot;&gt;Apollo GraphQL&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Frontend handles interface processes, visualization, and interaction with users. It contains a well-organized dashboard with useful insights and monitoring data for the users. The technology used to build this is NextJS (which uses ReactJSs rendering engine) as the main framework and using the sophisticated GraphQL API exposed by Hasura allows for detailed data throughput between the systems.&lt;/p&gt;
+&lt;h2&gt;Containerization&lt;/h2&gt;
+&lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We have used Docker to containerize the entire software stack into multiple different containers i.e one for the database, one for the flask server etc. This allows us with a predictable and safe production environment which is highly scalable.&lt;/p&gt;
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;The next steps involved adding &lt;a href=&quot;https://www.nginx.com/&quot;&gt;NGINX&lt;/a&gt; to the mix. NGINX is a load balancer that accelerates content and application delivery, improves security, facilitates availability and scalability. Therefore integrating this would be a big win.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GSoC 2019 Documented]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://statebait.github.io/blog/gsoc-2019-documented/</link><guid isPermaLink="false">https://statebait.github.io/blog/gsoc-2019-documented/</guid><pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/archive/2019/projects/4861160250146816/&quot;&gt;Project Info&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Web Pipeline For Kinetic (ODE-Based) Models&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; Ordinary differential equations are widely used for modelling biological networks and processes of kinetics. The idea of the project is to create a web application that allows a user to submit an SBML model and select methods of analysis and receive results. The different kind of analysis methods that will be available for use are Steady State Analysis, Parameter Fitting, Simulation.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Computational Biology @ University of Nebraska-Lincoln&lt;/p&gt;
