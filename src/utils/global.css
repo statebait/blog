@@ -12,12 +12,21 @@ body.light {
 body.dark {
   --textColor: white;
   --bq: rgba(255, 255, 255, 0.7);
-  --bg: #1d1d1d;
+  --bg: #111111;
 }
 
 blockquote {
   color: var(--bq) !important;
   border-left: 0.32813rem solid var(--textColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--textColor);
 }
 
 a {

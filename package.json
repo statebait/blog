@@ -29,10 +29,8 @@
     "react-helmet": "^6.0.0",
     "react-switch": "^5.0.0",
     "react-typography": "^0.16.19",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "^0.0.75",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-parnassus": "^0.16.19"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
@@ -47,10 +45,10 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "serve": "gatsby serve"
   }
 }
