@@ -7,7 +7,7 @@ description: I decided to write this article for all the people starting out wit
 I decided to write this article for all the people starting out with new React projects, in hope that it helps them in some way.
 Why React? Its pretty simple, at this point in my life I was just stepping into the cosmos of Web, and React was the most popular front-end framework.
 
-![1](./react-cosmos.jpg)
+![react-cosmos](./react-cosmos.jpg)
 
 The app I built is used for the Elections of the Student Body Government in my College and it took me approximately 2 months to complete it. Link to the GitHub repository: https://github.com/shadxx7/elections-frontend. So let’s begin:
 
@@ -37,7 +37,7 @@ readability.
 
 Now with the smaller problems and mistakes;
 
-![2](./react-hold.png)
+![react-hold](./react-hold.png)
 
 ### a. Trying to render empty functions
 

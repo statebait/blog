@@ -13,7 +13,7 @@ In popular belief, Windows is not preferred to do web development on and for tha
 
 Lets get started with the terminal. The terminal will be extensively used as you will be using a wholesome of different CLIs (Command Line Interfaces, like npm). Primarily you should be using PowerShell and bash (I’ll get to this) with a wrapper like [hyper](https://hyper.is/). Hyper is electron-based terminal built on HTML/CSS/JS. It has loads of extensions to add utility and themes to lavish your experience.
 
-![1](./terminal.jpg)
+![terminal](./terminal.jpg)
 
 I’ve mentioned the use of bash. Yes, you can install bash on windows and no it’s not a gimmick or some half-baked thing, its the real deal. Meet the Windows Subsystem for Linux (This feature was added to one of the later versions of Windows 10). [Here](https://docs.microsoft.com/en-us/windows/wsl/install-win10) is how to install it. You should use bash whenever PowerShell is giving you unheeded trouble. Remember that when you run bash, its a completely different OS running somewhere on your windows and therefore you need to make fresh installations of all your CLIs using the appropriate commands(depends on which Linux installation you choose).
 
@@ -39,7 +39,7 @@ yarn global add windows-build-tools
 
 The Code Editor is one of the most important things in web development and as a matter of fact in any kind of development (yes, I have a habit of repeating phrases). Having a seamless experience during coding, debugging can help with all the frustration that comes along with it. Personally, I have used a lot of different code editors, some that come loaded with a plethora of features and some that just have the bare minimum. However, there was only one that stuck; VS Code (abbr. for Visual Studio Code). VS Code comes with a handful features out of the box which should be enough to get you started and as you proceed you can explore its vast extensions marketplace to enhance your experience. VS Code with a good set of extensions can easily replicate a modern full-fledged IDE and all that with exceptional performance. Currently, its the most popular code editor for a lot of different categories of developers and receives new updates and features every month.
 
-![2](./vscode.png)
+![vscode](./vscode.png)
 
 Enough VS Code, moving on we have other options like [Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/), [Brackets](http://brackets.io/) and [WebStorm](https://www.jetbrains.com/webstorm/) etc. Atom is very similar to VS Code but the place it lacks mainly is performance, as you load new extensions in Atom, it slows down significantly. WebStorm is an industry level IDE with all the important features out of the box but it is not free (unless you are a student enrolled in a school).
 
