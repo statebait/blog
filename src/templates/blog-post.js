@@ -12,6 +12,11 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+    // To calculate read time (Approximation)
+    const dummyHtmlElement = document.createElement("span")
+    dummyHtmlElement.innerHTML = post.html
+    const minutes = dummyHtmlElement.textContent.split(" ").length / 200
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -27,7 +32,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {post.frontmatter.date} • {minutes.toFixed(0)} min read
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -36,7 +41,6 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
-
         <ul
           style={{
             display: `flex`,
