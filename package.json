@@ -36,7 +36,7 @@
     "gh-pages": "^3.0.0",
     "prettier": "^2.0.2"
   },
-  "homepage": "https://statebait.github.io/blog",
+  "homepage": "https://mohamedshadab.me/blog",
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -44,7 +44,7 @@
     "url": "git+https://github.com/statebait/blog.git"
   },
   "scripts": {
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "clean": "gatsby clean",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",

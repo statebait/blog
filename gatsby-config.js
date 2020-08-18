@@ -4,7 +4,7 @@ module.exports = {
     title: `Mohamed Shadab`,
     author: `Mohamed Shadab`,
     description: `Personal blog for Mohamed Shadab aka statebait`,
-    siteUrl: `https://statebait.github.io/blog`,
+    siteUrl: `https://mohamedshadab.me/blog`,
     social: {
       twitter: `statebait`,
     },

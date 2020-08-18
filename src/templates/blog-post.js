@@ -7,15 +7,24 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
+  state = {
+    minutes: 0,
+  }
+
+  componentDidMount() {
+    // To calculate read time (Approximation)
+    const dummyHtmlElement = document.createElement("span")
+    dummyHtmlElement.innerHTML = this.props.data.markdownRemark.html
+    console.log(this.props)
+    this.setState({
+      minutes: dummyHtmlElement.textContent.split(" ").length / 200,
+    })
+  }
+
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
-    // To calculate read time (Approximation)
-    const dummyHtmlElement = document.createElement("span")
-    dummyHtmlElement.innerHTML = post.html
-    const minutes = dummyHtmlElement.textContent.split(" ").length / 200
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -32,7 +41,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date} • {minutes.toFixed(0)} min read
+          {post.frontmatter.date} • {this.state.minutes.toFixed(0)} min read
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
