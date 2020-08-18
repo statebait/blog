@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[Personal blog for Mohamed Shadab aka statebait]]></description><link>https://statebait.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Aug 2020 06:35:51 GMT</lastBuildDate><item><title><![CDATA[Building a Chatroom Web App with Hasura]]></title><description><![CDATA[You will be learning how to set up Hasura and will learn how to write specific GraphQL queries which help you build this Web App. Most of…]]></description><link>https://statebait.github.io/blog/building-chatroom-with-hasura/</link><guid isPermaLink="false">https://statebait.github.io/blog/building-chatroom-with-hasura/</guid><pubDate>Fri, 15 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;You will be learning how to set up Hasura and will learn how to write specific GraphQL queries which help you build this Web App.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Mohamed Shadab]]></title><description><![CDATA[Personal blog for Mohamed Shadab aka statebait]]></description><link>https://mohamedshadab.me/blog</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 18 Aug 2020 14:37:53 GMT</lastBuildDate><item><title><![CDATA[Building a Chatroom Web App with Hasura]]></title><description><![CDATA[You will be learning how to set up Hasura and will learn how to write specific GraphQL queries which help you build this Web App. Most of…]]></description><link>https://mohamedshadab.me/blog/building-chatroom-with-hasura/</link><guid isPermaLink="false">https://mohamedshadab.me/blog/building-chatroom-with-hasura/</guid><pubDate>Fri, 15 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;You will be learning how to set up Hasura and will learn how to write specific GraphQL queries which help you build this Web App.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Most of the react code is already written and the tutorial branch has only the GraphQL logic/code missing from it. However you can choose to build from scratch while taking reference from &lt;a href=&quot;https://github.com/statebait/hasura-chatroom-demo.git&quot;&gt;https://github.com/statebait/hasura-chatroom-demo.git&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -201,7 +201,7 @@ column_type: Text&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;sendMessage&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useMutation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;SEND_MESSAGE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Vola! You should have a working application!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Yoctosehns Software Architecture]]></title><description><![CDATA[The early platform of Yoctosehns can be divided into 4 services; 2 independent micro frontends one used for statistical calculation and the…]]></description><link>https://statebait.github.io/blog/yoctosehns-software-architecture/</link><guid isPermaLink="false">https://statebait.github.io/blog/yoctosehns-software-architecture/</guid><pubDate>Sun, 26 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The early platform of Yoctosehns can be divided into 4 services; 2 independent micro frontends one used for statistical calculation and the other for general monitoring built with ReactJS and AngularJS respectively. The other 2 services were a Python Flask based REST API which crudely inserted data on to the final service that is the MySQL Database.&lt;/p&gt;
+&lt;p&gt;Vola! You should have a working application!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Yoctosehns Software Architecture]]></title><description><![CDATA[The early platform of Yoctosehns can be divided into 4 services; 2 independent micro frontends one used for statistical calculation and the…]]></description><link>https://mohamedshadab.me/blog/yoctosehns-software-architecture/</link><guid isPermaLink="false">https://mohamedshadab.me/blog/yoctosehns-software-architecture/</guid><pubDate>Sun, 26 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The early platform of Yoctosehns can be divided into 4 services; 2 independent micro frontends one used for statistical calculation and the other for general monitoring built with ReactJS and AngularJS respectively. The other 2 services were a Python Flask based REST API which crudely inserted data on to the final service that is the MySQL Database.&lt;/p&gt;
 &lt;p&gt;The Flask service had multiple APIs (mostly CRUD) baked into it for fetching data from the database and one rather important API which handled all the HTTP requests from the Hardware nodes to make entries into the database.&lt;/p&gt;
 &lt;p&gt;Redesigning this was important as having 2 different frontends which easily could have been the same module was difficult to manage. Other than that, since the data was used to perform statistics and advanced monitoring, there was a lot of varied data fetching involved. Creating separate APIs for each of these was difficult.&lt;/p&gt;
 &lt;p&gt;The new software architecture of Yoctosehns utilizes Microservices architecture. In this architecture, each process is isolated into a different service that that is independent of each other. They communicate with each other through the help of the REST API (Application Programming Interface) and GraphQL API which both leverage the HTTP protocol under the hood.&lt;/p&gt;
@@ -212,7 +212,7 @@ column_type: Text&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/d98d44bab555c8ba637076a535e02702/c2b0b/architecture-diagram.png&quot;
+    href=&quot;/static/d98d44bab555c8ba637076a535e02702/c2b0b/architecture-diagram.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -225,13 +225,13 @@ column_type: Text&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Architecture Diagram&quot;
         title=&quot;Architecture Diagram&quot;
-        src=&quot;/blog/static/d98d44bab555c8ba637076a535e02702/fcda8/architecture-diagram.png&quot;
-        srcset=&quot;/blog/static/d98d44bab555c8ba637076a535e02702/12f09/architecture-diagram.png 148w,
-/blog/static/d98d44bab555c8ba637076a535e02702/e4a3f/architecture-diagram.png 295w,
-/blog/static/d98d44bab555c8ba637076a535e02702/fcda8/architecture-diagram.png 590w,
-/blog/static/d98d44bab555c8ba637076a535e02702/efc66/architecture-diagram.png 885w,
-/blog/static/d98d44bab555c8ba637076a535e02702/c83ae/architecture-diagram.png 1180w,
-/blog/static/d98d44bab555c8ba637076a535e02702/c2b0b/architecture-diagram.png 1895w&quot;
+        src=&quot;/static/d98d44bab555c8ba637076a535e02702/fcda8/architecture-diagram.png&quot;
+        srcset=&quot;/static/d98d44bab555c8ba637076a535e02702/12f09/architecture-diagram.png 148w,
+/static/d98d44bab555c8ba637076a535e02702/e4a3f/architecture-diagram.png 295w,
+/static/d98d44bab555c8ba637076a535e02702/fcda8/architecture-diagram.png 590w,
+/static/d98d44bab555c8ba637076a535e02702/efc66/architecture-diagram.png 885w,
+/static/d98d44bab555c8ba637076a535e02702/c83ae/architecture-diagram.png 1180w,
+/static/d98d44bab555c8ba637076a535e02702/c2b0b/architecture-diagram.png 1895w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -262,7 +262,7 @@ a simple JWT (JSON Web Token) based authentication system which handles auth bas
 &lt;p&gt;Tools/Technologies used: &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We have used Docker to containerize the entire software stack into multiple different containers i.e one for the database, one for the flask server etc. This allows us with a predictable and safe production environment which is highly scalable.&lt;/p&gt;
 &lt;h2&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;The next steps involved adding &lt;a href=&quot;https://www.nginx.com/&quot;&gt;NGINX&lt;/a&gt; to the mix. NGINX is a load balancer that accelerates content and application delivery, improves security, facilitates availability and scalability. Therefore integrating this would be a big win.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GSoC 2019 Documented]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://statebait.github.io/blog/gsoc-2019-documented/</link><guid isPermaLink="false">https://statebait.github.io/blog/gsoc-2019-documented/</guid><pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/archive/2019/projects/4861160250146816/&quot;&gt;Project Info&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The next steps involved adding &lt;a href=&quot;https://www.nginx.com/&quot;&gt;NGINX&lt;/a&gt; to the mix. NGINX is a load balancer that accelerates content and application delivery, improves security, facilitates availability and scalability. Therefore integrating this would be a big win.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GSoC 2019 Documented]]></title><description><![CDATA[Project Info Project: Web Pipeline For Kinetic (ODE-Based) Models Description: Ordinary differential equations are widely used for modelling…]]></description><link>https://mohamedshadab.me/blog/gsoc-2019-documented/</link><guid isPermaLink="false">https://mohamedshadab.me/blog/gsoc-2019-documented/</guid><pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/archive/2019/projects/4861160250146816/&quot;&gt;Project Info&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Web Pipeline For Kinetic (ODE-Based) Models&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; Ordinary differential equations are widely used for modelling biological networks and processes of kinetics. The idea of the project is to create a web application that allows a user to submit an SBML model and select methods of analysis and receive results. The different kind of analysis methods that will be available for use are Steady State Analysis, Parameter Fitting, Simulation.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Computational Biology @ University of Nebraska-Lincoln&lt;/p&gt;
@@ -364,7 +364,7 @@ m &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; read_model&lt;span
 &lt;h2&gt;Final thoughts&lt;/h2&gt;
 &lt;p&gt;Learned a ton of things during my Google Summer of Code 2019 and it is a must-do if you are a student and want to pursue software engineering.&lt;/p&gt;
 &lt;p&gt;With that said I also started contributing to the ccNetViz library (with over 5 PRs merged!) and I must say the entire HelikarLab team is amazing, super supportive, helpful and resourceful.&lt;/p&gt;
-&lt;p&gt;Finally, I would like to thank my mentors greatly for all their support.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Web Development on Windows]]></title><description><![CDATA[In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has…]]></description><link>https://statebait.github.io/blog/web-development-on-windows/</link><guid isPermaLink="false">https://statebait.github.io/blog/web-development-on-windows/</guid><pubDate>Sun, 24 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has changed over the years as Windows has matured into what it is today.&lt;/p&gt;
+&lt;p&gt;Finally, I would like to thank my mentors greatly for all their support.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Web Development on Windows]]></title><description><![CDATA[In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has…]]></description><link>https://mohamedshadab.me/blog/web-development-on-windows/</link><guid isPermaLink="false">https://mohamedshadab.me/blog/web-development-on-windows/</guid><pubDate>Sun, 24 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In popular belief, Windows is not preferred to do web development on and for that matter any kind of development. But honestly, this has changed over the years as Windows has matured into what it is today.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This article assumes you are using Windows 10, however since Windows offers a decent amount of
 backwards compatibility, you should be able to pull this off with an older version of Windows too.&lt;/p&gt;
@@ -377,7 +377,7 @@ backwards compatibility, you should be able to pull this off with an older versi
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/84f71/terminal.jpg&quot;
+    href=&quot;/static/bcb530713df7a245c70588158e905ca5/84f71/terminal.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -388,15 +388,15 @@ backwards compatibility, you should be able to pull this off with an older versi
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1&quot;
-        title=&quot;1&quot;
-        src=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/1c72d/terminal.jpg&quot;
-        srcset=&quot;/blog/static/bcb530713df7a245c70588158e905ca5/a80bd/terminal.jpg 148w,
-/blog/static/bcb530713df7a245c70588158e905ca5/1c91a/terminal.jpg 295w,
-/blog/static/bcb530713df7a245c70588158e905ca5/1c72d/terminal.jpg 590w,
-/blog/static/bcb530713df7a245c70588158e905ca5/a8a14/terminal.jpg 885w,
-/blog/static/bcb530713df7a245c70588158e905ca5/fbd2c/terminal.jpg 1180w,
-/blog/static/bcb530713df7a245c70588158e905ca5/84f71/terminal.jpg 1277w&quot;
+        alt=&quot;terminal&quot;
+        title=&quot;terminal&quot;
+        src=&quot;/static/bcb530713df7a245c70588158e905ca5/1c72d/terminal.jpg&quot;
+        srcset=&quot;/static/bcb530713df7a245c70588158e905ca5/a80bd/terminal.jpg 148w,
+/static/bcb530713df7a245c70588158e905ca5/1c91a/terminal.jpg 295w,
+/static/bcb530713df7a245c70588158e905ca5/1c72d/terminal.jpg 590w,
+/static/bcb530713df7a245c70588158e905ca5/a8a14/terminal.jpg 885w,
+/static/bcb530713df7a245c70588158e905ca5/fbd2c/terminal.jpg 1180w,
+/static/bcb530713df7a245c70588158e905ca5/84f71/terminal.jpg 1277w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -419,7 +419,7 @@ backwards compatibility, you should be able to pull this off with an older versi
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/fe8a7/vscode.png&quot;
+    href=&quot;/static/edd4e7376170d0a5215b9091fd24effa/fe8a7/vscode.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -430,15 +430,15 @@ backwards compatibility, you should be able to pull this off with an older versi
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;2&quot;
-        title=&quot;2&quot;
-        src=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/fcda8/vscode.png&quot;
-        srcset=&quot;/blog/static/edd4e7376170d0a5215b9091fd24effa/12f09/vscode.png 148w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/e4a3f/vscode.png 295w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/fcda8/vscode.png 590w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/efc66/vscode.png 885w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/c83ae/vscode.png 1180w,
-/blog/static/edd4e7376170d0a5215b9091fd24effa/fe8a7/vscode.png 1223w&quot;
+        alt=&quot;vscode&quot;
+        title=&quot;vscode&quot;
+        src=&quot;/static/edd4e7376170d0a5215b9091fd24effa/fcda8/vscode.png&quot;
+        srcset=&quot;/static/edd4e7376170d0a5215b9091fd24effa/12f09/vscode.png 148w,
+/static/edd4e7376170d0a5215b9091fd24effa/e4a3f/vscode.png 295w,
+/static/edd4e7376170d0a5215b9091fd24effa/fcda8/vscode.png 590w,
+/static/edd4e7376170d0a5215b9091fd24effa/efc66/vscode.png 885w,
+/static/edd4e7376170d0a5215b9091fd24effa/c83ae/vscode.png 1180w,
+/static/edd4e7376170d0a5215b9091fd24effa/fe8a7/vscode.png 1223w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -453,7 +453,7 @@ backwards compatibility, you should be able to pull this off with an older versi
 &lt;p&gt;Whether you like it or not, User Interfaces and User experiences are an integral part of web development. When developing the front-end of any web project it some times it helps a lot to start with creating mockups &amp;#x26; prototypes of the interface. Some easy (and free) to use tools for this are &lt;a href=&quot;https://www.figma.com/&quot;&gt;Figma&lt;/a&gt; and &lt;a href=&quot;https://www.adobe.com/in/products/xd.html&quot;&gt;Adobe XD&lt;/a&gt;. I prefer using Figma, mainly because it has an option to easily export the CSS of any object created. Other than that you couldn’t go wrong with either.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Developing the Web on Windows has never been as easy as it is today, so let go of the myth that only Mac’s and Linux PC’s can do it and start developing on Windows today. 😃&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mistakes I Made in My First React App]]></title><description><![CDATA[I decided to write this article for all the people starting out with new React projects, in hope that it helps them in some way.
-Why React…]]></description><link>https://statebait.github.io/blog/mistakes-i-made-in-my-first-react-app/</link><guid isPermaLink="false">https://statebait.github.io/blog/mistakes-i-made-in-my-first-react-app/</guid><pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I decided to write this article for all the people starting out with new React projects, in hope that it helps them in some way.
+Why React…]]></description><link>https://mohamedshadab.me/blog/mistakes-i-made-in-my-first-react-app/</link><guid isPermaLink="false">https://mohamedshadab.me/blog/mistakes-i-made-in-my-first-react-app/</guid><pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I decided to write this article for all the people starting out with new React projects, in hope that it helps them in some way.
 Why React? Its pretty simple, at this point in my life I was just stepping into the cosmos of Web, and React was the most popular front-end framework.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -461,7 +461,7 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/0f98f/react-cosmos.jpg&quot;
+    href=&quot;/static/8af8e4b0886f02ced35176d00b1014d0/0f98f/react-cosmos.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -472,15 +472,15 @@ Why React? Its pretty simple, at this point in my life I was just stepping into 
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1&quot;
-        title=&quot;1&quot;
-        src=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/1c72d/react-cosmos.jpg&quot;
-        srcset=&quot;/blog/static/8af8e4b0886f02ced35176d00b1014d0/a80bd/react-cosmos.jpg 148w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/1c91a/react-cosmos.jpg 295w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/1c72d/react-cosmos.jpg 590w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/a8a14/react-cosmos.jpg 885w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/fbd2c/react-cosmos.jpg 1180w,
-/blog/static/8af8e4b0886f02ced35176d00b1014d0/0f98f/react-cosmos.jpg 1920w&quot;
+        alt=&quot;react-cosmos&quot;
+        title=&quot;react-cosmos&quot;
+        src=&quot;/static/8af8e4b0886f02ced35176d00b1014d0/1c72d/react-cosmos.jpg&quot;
+        srcset=&quot;/static/8af8e4b0886f02ced35176d00b1014d0/a80bd/react-cosmos.jpg 148w,
+/static/8af8e4b0886f02ced35176d00b1014d0/1c91a/react-cosmos.jpg 295w,
+/static/8af8e4b0886f02ced35176d00b1014d0/1c72d/react-cosmos.jpg 590w,
+/static/8af8e4b0886f02ced35176d00b1014d0/a8a14/react-cosmos.jpg 885w,
+/static/8af8e4b0886f02ced35176d00b1014d0/fbd2c/react-cosmos.jpg 1180w,
+/static/8af8e4b0886f02ced35176d00b1014d0/0f98f/react-cosmos.jpg 1920w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -510,7 +510,7 @@ readability.&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/95e59/react-hold.png&quot;
+    href=&quot;/static/278bf2e7ba194be4c05914e2412c6a13/95e59/react-hold.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -521,15 +521,15 @@ readability.&lt;/p&gt;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;2&quot;
-        title=&quot;2&quot;
-        src=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/fcda8/react-hold.png&quot;
-        srcset=&quot;/blog/static/278bf2e7ba194be4c05914e2412c6a13/12f09/react-hold.png 148w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/e4a3f/react-hold.png 295w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/fcda8/react-hold.png 590w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/efc66/react-hold.png 885w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/c83ae/react-hold.png 1180w,
-/blog/static/278bf2e7ba194be4c05914e2412c6a13/95e59/react-hold.png 1460w&quot;
+        alt=&quot;react-hold&quot;
+        title=&quot;react-hold&quot;
+        src=&quot;/static/278bf2e7ba194be4c05914e2412c6a13/fcda8/react-hold.png&quot;
+        srcset=&quot;/static/278bf2e7ba194be4c05914e2412c6a13/12f09/react-hold.png 148w,
+/static/278bf2e7ba194be4c05914e2412c6a13/e4a3f/react-hold.png 295w,
+/static/278bf2e7ba194be4c05914e2412c6a13/fcda8/react-hold.png 590w,
+/static/278bf2e7ba194be4c05914e2412c6a13/efc66/react-hold.png 885w,
+/static/278bf2e7ba194be4c05914e2412c6a13/c83ae/react-hold.png 1180w,
+/static/278bf2e7ba194be4c05914e2412c6a13/95e59/react-hold.png 1460w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
