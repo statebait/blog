@@ -104,7 +104,7 @@ function Layout(props) {
             GitHub
           </a>
           .
-          <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+          <a href="/blog/rss.xml" target="_blank" rel="noopener noreferrer">
             RSS
           </a>
         </div>
