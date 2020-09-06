@@ -3,13 +3,14 @@ module.exports = {
   siteMetadata: {
     title: `Mohamed Shadab`,
     author: `Mohamed Shadab`,
-    description: `Personal blog for Mohamed Shadab aka statebait`,
+    description: `Personal blog of Mohamed Shadab. You will find posts mostly about tech related to web development! Mohamed is a Software Engineer building awesome tech at Lyearn.`,
     siteUrl: `https://mohamedshadab.me/blog`,
     social: {
       twitter: `statebait`,
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
