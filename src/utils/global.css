@@ -12,7 +12,7 @@ body.light {
 body.dark {
   --textColor: white;
   --bq: rgba(255, 255, 255, 0.7);
-  --bg: #111111;
+  --bg: #181818;
 }
 
 blockquote {

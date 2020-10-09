@@ -91,11 +91,12 @@ function Layout(props) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, max-content)",
+            gridTemplateColumns: "repeat(5, max-content)",
             gridGap: 10,
             color: "#8a75f5",
           }}
         >
+          <a href="/">Home</a>.
           <a
             href="https://www.github.com/statebait"
             target="_blank"
