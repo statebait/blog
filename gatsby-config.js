@@ -55,7 +55,6 @@ module.exports = {
         trackingId: `G-41E2ERPLTQ`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -4,6 +4,9 @@ import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import Switch from "react-switch"
 import { rhythm, scale } from "../utils/typography"
 
+import checkedIcon from "../assets/svg/sun-solid.svg"
+import uncheckedIcon from "../assets/svg/moon-solid.svg"
+
 function Layout(props) {
   const [state, setState] = useState({ toggle: false })
 
@@ -61,7 +64,7 @@ function Layout(props) {
               onHandleColor="#000"
               checkedIcon={
                 <img
-                  src={require("../assets/svg/sun-solid.svg")}
+                  src={checkedIcon}
                   style={{
                     margin: 6,
                     width: 17,
@@ -72,7 +75,7 @@ function Layout(props) {
               }
               uncheckedIcon={
                 <img
-                  src={require("../assets/svg/moon-solid.svg")}
+                  src={uncheckedIcon}
                   style={{
                     margin: 6,
                     width: 17,
@@ -103,10 +106,6 @@ function Layout(props) {
             rel="noopener noreferrer"
           >
             GitHub
-          </a>
-          .
-          <a href="/blog/rss.xml" target="_blank" rel="noopener noreferrer">
-            RSS
           </a>
         </div>
         <br />© {new Date().getFullYear()} Mohamed Shadab
