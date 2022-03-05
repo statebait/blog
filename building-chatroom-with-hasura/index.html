@@ -45,7 +45,7 @@ void function() {
 </li>
 <li>
 <p>Next, you need to start the docker containers for the PostgreSQL database and Hasura GraphQL Engine. Run the following for that inside the repo:</p>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker-compose up -d</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">docker-compose</span> up -d</code></pre></div>
 </li>
 <li>
 <p>This will spin up both the containers and now the Hasura console should be available at:</p>
@@ -132,14 +132,14 @@ column_type: Text</code></pre></div>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> InMemoryCache <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"apollo-cache-inmemory"</span>
 
 <span class="token keyword">const</span> wsLink <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocketLink</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  uri<span class="token operator">:</span> <span class="token string">"ws://localhost:8080/v1/graphql"</span><span class="token punctuation">,</span>
-  options<span class="token operator">:</span> <span class="token punctuation">{</span>
-    reconnect<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">uri</span><span class="token operator">:</span> <span class="token string">"ws://localhost:8080/v1/graphql"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">reconnect</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 <span class="token keyword">const</span> httpLink <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HttpLink</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  uri<span class="token operator">:</span> <span class="token string">"http://localhost:8080/v1/graphql"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">uri</span><span class="token operator">:</span> <span class="token string">"http://localhost:8080/v1/graphql"</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 <span class="token keyword">const</span> link <span class="token operator">=</span> <span class="token function">split</span><span class="token punctuation">(</span>
@@ -157,14 +157,14 @@ column_type: Text</code></pre></div>
 <span class="token keyword">const</span> cache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InMemoryCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  cache<span class="token operator">:</span> cache<span class="token punctuation">,</span>
+  <span class="token literal-property property">cache</span><span class="token operator">:</span> cache<span class="token punctuation">,</span>
   link<span class="token punctuation">,</span>
-  name<span class="token operator">:</span> <span class="token string">"react-web-client"</span><span class="token punctuation">,</span>
-  version<span class="token operator">:</span> <span class="token string">"1.3"</span><span class="token punctuation">,</span>
-  queryDeduplication<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  defaultOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
-    watchQuery<span class="token operator">:</span> <span class="token punctuation">{</span>
-      fetchPolicy<span class="token operator">:</span> <span class="token string">"cache-and-network"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"react-web-client"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">version</span><span class="token operator">:</span> <span class="token string">"1.3"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">queryDeduplication</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">defaultOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">watchQuery</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">fetchPolicy</span><span class="token operator">:</span> <span class="token string">"cache-and-network"</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
@@ -187,8 +187,8 @@ column_type: Text</code></pre></div>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token punctuation">[</span>addUser<span class="token punctuation">,</span> <span class="token punctuation">{</span> error <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useMutation</span><span class="token punctuation">(</span><span class="token constant">ADD_USER</span><span class="token punctuation">)</span></code></pre></div>
 <p>The <code class="language-text">addUser</code> in the above code is a promise given to you. We need to execute it on submit so add this to the onSubmit function inside the <code class="language-text">if</code> block:</p>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token function">addUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  variables<span class="token operator">:</span> <span class="token punctuation">{</span>
-    user<span class="token operator">:</span> value<span class="token punctuation">,</span>
+  <span class="token literal-property property">variables</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">user</span><span class="token operator">:</span> value<span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -241,7 +241,7 @@ column_type: Text</code></pre></div>
 </span><span class="token template-punctuation string">`</span></span></code></pre></div>
 <p>Add the following hooks to use the above subscription and mutation:</p>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token punctuation">{</span> loading<span class="token punctuation">,</span> error<span class="token punctuation">,</span> data <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useSubscription</span><span class="token punctuation">(</span><span class="token constant">MESSAGE_SUBSCRIPTION</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-  variables<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">variables</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     chatroomId<span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -250,7 +250,7 @@ column_type: Text</code></pre></div>
 /blog/static/93e51d77c211ba64487cd576c3d15c3d/f937a/profile-pic.png 1.5x,
 /blog/static/93e51d77c211ba64487cd576c3d15c3d/71eb7/profile-pic.png 2x" /><img loading="lazy" width="50" height="50" srcset="/blog/static/93e51d77c211ba64487cd576c3d15c3d/8ba1e/profile-pic.png 1x,
 /blog/static/93e51d77c211ba64487cd576c3d15c3d/f937a/profile-pic.png 1.5x,
-/blog/static/93e51d77c211ba64487cd576c3d15c3d/71eb7/profile-pic.png 2x" src="/blog/static/93e51d77c211ba64487cd576c3d15c3d/8ba1e/profile-pic.png" alt="Mohamed Shadab" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>Yeah, I write. Catch up with me on<!-- --> <a href="https://twitter.com/statebait">twitter.</a></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/yoctosehns-software-architecture/">← <!-- -->Yoctosehns Software Architecture</a></li><li></li></ul></main><footer><div style="display:grid;grid-template-columns:repeat(5, max-content);grid-gap:10px;color:#8a75f5"><a href="/">Home</a>.<a href="https://www.github.com/statebait" target="_blank" rel="noopener noreferrer">GitHub</a></div><br/>© <!-- -->2021<!-- --> Mohamed Shadab</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+/blog/static/93e51d77c211ba64487cd576c3d15c3d/71eb7/profile-pic.png 2x" src="/blog/static/93e51d77c211ba64487cd576c3d15c3d/8ba1e/profile-pic.png" alt="Mohamed Shadab" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>Yeah, I write. Catch up with me on<!-- --> <a href="https://twitter.com/statebait">twitter.</a></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/yoctosehns-software-architecture/">← <!-- -->Yoctosehns Software Architecture</a></li><li></li></ul></main><footer><div style="display:grid;grid-template-columns:repeat(5, max-content);grid-gap:10px;color:#8a75f5"><a href="/">Home</a>.<a href="https://www.github.com/statebait" target="_blank" rel="noopener noreferrer">GitHub</a></div><br/>© <!-- -->2022<!-- --> Mohamed Shadab</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
